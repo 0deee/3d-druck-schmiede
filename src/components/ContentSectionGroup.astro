@@ -1,0 +1,81 @@
+---
+import { Image } from "astro:assets";
+
+export interface Props {
+  showButton?: boolean;
+  imageRight: boolean;
+  image: ImageMetadata;
+  buttonText?: string;
+  backgroundGray:boolean;
+  buttonLink?:string;
+  altImage:string;
+}
+
+const { image, buttonText, showButton, imageRight, backgroundGray, buttonLink, altImage } = Astro.props;
+---
+
+<section class={backgroundGray ? 'bg-background' : ''}>
+  <header>
+    <h2 class="text-5xl px-6 pt-12 text-black text-bold text-center">
+      <slot name="section-heading" />
+    </h2>
+  </header>
+  <div
+    class="flex flex-col lg:flex-row items-center justify-center py-12 px-6 lg:px-24"
+  >
+  {imageRight ? (
+  <div class="max-w-md">
+    <div class="text-lg mb-8 text-black text-center text-justify">
+        <slot name="section-content" />
+    </div>
+    {showButton && (
+        <div class="flex justify-center">
+            <a
+          class="bg-primary text-white py-2.5 px-3.5 rounded-md shadow-sm font-semibold text-sm hover:bg-primary/80 transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/80"
+          href="/"
+        >
+          {buttonText}
+        </a>
+      </div>
+      )}
+    </div>
+    <div class="pb-12 lg:pb-0 md:mx-8 xl:mx-24">
+      <Image
+        src={image}
+        alt={altImage}
+        width="500"
+        format="webp"
+        loading="eager"
+        class="border-1 border-white rounded-lg shadow-lg"
+      />
+    </div>
+  ) : (
+<div class="pb-12 lg:pb-0 md:mx-8 xl:mx-24">
+      <Image
+        src={image}
+        alt={altImage}
+        width="500"
+        format="webp"
+        class="border-1 border-white rounded-lg shadow-lg"
+      />
+    </div>
+
+    <div class="max-w-xl">
+      <div class="text-lg mb-8 text-black text-center text-justify">
+        <slot name="section-content" />
+      </div>
+      {showButton && (
+        <div class="flex justify-center">
+        <a
+          class="bg-primary text-white py-2.5 px-3.5 rounded-md shadow-sm font-semibold text-sm hover:bg-primary/80 transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/80"
+          href={buttonLink}
+        >
+          {buttonText}
+        </a>
+      </div>
+      )}
+    </div>
+
+  )} 
+  </div>
+</section>

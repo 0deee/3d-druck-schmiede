@@ -1,11 +1,133 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSection from "../components/HeroSectionSubpages.astro";
+import ContentSectionGroup from "../components/ContentSectionGroup.astro";
+
+import PrintService from "../images/marketing-img/3d-print-service-image.jpg";
+import DesignService from "../images/marketing-img/3d-design-service-image.jpg";
+import MaterialService from "../images/marketing-img/material-service-image.jpg";
+import TrainingService from "../images/marketing-img/training-service-image.jpg";
 
 const title = "Unsere Leistungen | 3D-Druck-Schmiede";
-const description = "Diese Leistungen bieten wir Ihnen an."
+const description = "Diese Leistungen bieten wir Ihnen an.";
 ---
 
 <BaseLayout title={title} description={description}>
-  <h1>Leistungen</h1>
+  <HeroSection backgroundGray={true}>
+    <span slot="hero-heading">Leistungen</span>
+    <span slot="hero-subheading"
+      >Maßgeschneiderte Lösungen für Sie rund um den 3D-Druck</span
+    >
+  </HeroSection>
+  <ContentSectionGroup
+    image={PrintService}
+    imageRight={false}
+    backgroundGray={false}
+    altImage="3D-Printing-Service Section-Bild"
+  >
+    <span slot="section-heading">3D-Printing-Service</span>
+    <p slot="section-content"
+      >Nutzen Sie unsere fortschrittliche 3D-Drucktechnologie, um Ihre Projekte
+      schnell und exakt umzusetzen. Von der Herstellung einzelner Teile bis hin
+      zu ganzen Serien bieten wir Ihnen maßgeschneiderte Lösungen mit höchster
+      Präzision und Qualität. Mit einer Vielzahl an verfügbaren Materialien und
+      flexiblen Produktionszeiten gewährleisten wir, dass Ihre Anforderungen
+      optimal erfüllt werden.
+    </p>
+  </ContentSectionGroup>
 
+  <ContentSectionGroup
+    image={DesignService}
+    imageRight={true}
+    backgroundGray={true}
+    altImage="3D-Design und Modeling Section-Bild"
+  >
+    <span slot="section-heading">3D-Design und Modeling</span>
+    <p slot="section-content"
+      >Unsere Design- und Modellierungsdienste helfen Ihnen, Ihre Ideen in
+      detailreiche, funktionale 3D-Modelle zu verwandeln. Durch enge
+      Zusammenarbeit und kreative Expertise erstellen wir maßgeschneiderte
+      Designs, die Ihre Anforderungen perfekt widerspiegeln. Vom ersten Entwurf
+      bis zum fertigen Modell begleiten wir Sie, um sicherzustellen, dass Ihre
+      Vorstellungen präzise umgesetzt werden.
+    </p>
+  </ContentSectionGroup>
+
+  <ContentSectionGroup
+    image={MaterialService}
+    imageRight={false}
+    backgroundGray={false}
+    altImage="Materialberatung Section-Bild"
+  >
+    <span slot="section-heading">Materialberatung</span>
+    <p slot="section-content"
+      >Die Wahl des richtigen Materials ist entscheidend für die Qualität und
+      Funktionalität Ihrer 3D-Druckerzeugnisse. Unser umfassende
+      Materialberatung hilft Ihnen, die ideale Materiallösung für Ihre
+      spezifischen Anforderungen zu finden. Wir bieten umfassende Beratung zu
+      einer Vielzahl von Materialien, einschließlich Kunststoffen, Metallen und
+      Verbundstoffen, und erklären die Eigenschaften, Vorteile und
+      Anwendungsgebiete jedes Materials.
+    </p>
+    <ul class="list-disc text-md py-4" slot="section-content">
+      <li>
+        <b>Materialauswahl:</b> Erfahren Sie, welche Materialien am besten zu Ihren
+        Projektanforderungen passen, sei es für Festigkeit, Flexibilität oder Temperaturbeständigkeit.
+      </li>
+      <li>
+        <b>Technische Beratung:</b> Erhalten Sie Einblicke in die technischen Eigenschaften
+        von Materialien, einschließlich Druckbarkeit, Nachbearbeitungsoptionen und
+        Haltbarkeit.
+      </li>
+      <li>
+        <b>Kostenoptimierung:</b> Wir helfen Ihnen, die besten Materialoptionen zu
+        finden, um Kosten zu optimieren, ohne die Qualität zu beeinträchtigen.
+      </li>
+      <li>
+        <b>Innovative Materialien:</b> Nutzen Sie unser Wissen über neue und innovative
+        Materialien, um Ihre Projekte noch weiter zu verbessern.
+      </li>
+    </ul>
+  </ContentSectionGroup>
+
+  <ContentSectionGroup
+    image={TrainingService}
+    imageRight={true}
+    backgroundGray={true}
+    altImage="Workshop und Live-Training Section-Bild"
+  >
+    <span slot="section-heading">Workshops und Live-Training</span>
+    <p slot="section-content"
+      >In unseren Schulungen und Live-Trainings bieten wir Ihnen die Möglichkeit,
+      sich umfassend mit den neuesten Technologien und Methoden im 3D-Druck
+      vertraut zu machen. Durch praxisnahe Kurse und Expertenwissen können Sie
+      Ihre Fähigkeiten erweitern und wertvolle Einblicke in die Branche
+      gewinnen. Nutzen Sie die Gelegenheit, um durch gezielte Übungen und
+      individuelle Beratung Ihr Wissen aufzufrischen und Ihre Projekte
+      erfolgreich umzusetzen.
+    </p>
+  </ContentSectionGroup>
+
+  <section class="bg-gradient-to-r from-primary to-primary-lighter">
+    <div
+      class="flex items-center justify-center py-24 px-6 lg:px-24 text-center"
+    >
+      <header class="max-w-2xl">
+        <h2 class="text-5xl mb-4 font-bold text-white">Sie haben Interesse?</h2>
+        <p class="text-lg text-gray-700 mb-8 text-white">
+          Wenn Ihnen unsere Services zugesagt haben, kontaktieren Sie uns gerne
+          direkt über unser Kontakformular. Jede Anfrage wird garantiert
+          innerhalb eines Tages beantwortet.
+        </p>
+        <a
+          class="bg-white text-primary py-2.5 px-3.5 rounded-md shadow-sm
+          font-semibold text-sm hover:bg-white/80 transition duration-300
+          focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/80"
+          href="/kontakt"
+        >
+          Jetzt Kontakt aufnehmen
+        </a>
+      </header>
+    </div>
+  </section>
 </BaseLayout>

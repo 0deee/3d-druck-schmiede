@@ -1,0 +1,85 @@
+---
+import { getCollection } from 'astro:content';
+import { Breadcrumbs } from "astro-breadcrumbs";
+import BaseLayout from "./BaseLayout.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+
+import "astro-breadcrumbs/breadcrumbs.css";
+
+
+
+const wikiEntries = await getCollection('wiki');
+const randomWikiEntries = ((entries, count) => {
+    const randomized = entries.sort(() => 0.5 - Math.random());
+    return randomized.slice(0, count);
+})(wikiEntries, 3)
+
+
+const { title, description, author, pubDate, termType, keywords } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <article>
+    <div class="flex flex-col">
+      <div class="py-4 md:py-12 px-12">
+        <div class="my-6 flex justify-center text-black">
+          <Breadcrumbs linkTextFormat="capitalized" indexText="Startseite">
+            <svg
+              slot="separator"
+              width="24"
+              height="24"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M4.10876 14L9.46582 1H10.8178L5.46074 14H4.10876Z"
+                fill="#000000"></path>
+            </svg>
+          </Breadcrumbs>
+        </div>
+        <h1 class="text-5xl text-center font-bold my-3 break-words">{title}</h1>
+        <div class="flex flex-col md:flex-row items-center justify-center text-lg">
+          <div>
+            <svg class="fill-white w-6 rounded-full bg-primary p-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              ><title>account icon</title><path
+                d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
+              ></path></svg
+            >
+          </div>
+          <p class="mx-2">{author}</p>
+          <div class="bg-primary-lighter rounded-full h-3 w-3 aria-hidden" />
+          <div class="mx-2"><FormattedDate date={pubDate} /></div>
+          <div class="bg-primary-lighter rounded-full h-3 w-3 aria-hidden" />
+          <p class="mx-2">{termType}</p>
+        </div>
+      </div>
+      <div class="mx-6 md:mx-16 lg:mx-48 xl:mx-72 2xl:mx-96 my-8 wiki-content *:my-4 text-justify">
+        <slot />
+      </div>
+    </div>
+  </article>
+  <section>
+    <div
+      class="flex items-center justify-center py-6 px-6 lg:px-24 text-center"
+    >
+      <header class="max-w-2xl">
+        <h2 class="text-5xl mb-4 font-bold text-black">Ähnliche Wiki-Artikel</h2>
+      </header>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-3 mx-6 md:mx-6 lg:mx-16 xl:mx-48 2xl:mx-72">
+      {randomWikiEntries.map((entry) => (
+        <div class="flex flex-col items-center justify-center bg-background mx-6 my-6 py-4">
+          <a class="text-xl font-bold" href={`/wiki/${entry.slug}`}>{entry.data.title.split(" ")[0]}</a>
+          <p class="px-10 py-4 text-center">{entry.data.description}</p>
+          <div class="flex flex-col md:flex-row items-center justify-center text-md">
+            <div class="mx-2"><FormattedDate date={entry.data.pubDate} /></div>
+            <p class="mx-2">{termType}</p>
+            </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,47 @@
+---
+
+---
+
+<div class="hamburger">
+  <span class="line"></span>
+  <span class="line"></span>
+  <span class="line"></span>
+</div>
+<style>
+  .hamburger {
+    padding-right: 20px;
+    cursor: pointer;
+  }
+
+  .hamburger .line {
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: rgb(var(--black));
+    transition: all 0.3s cubic-bezier(0.6, 0, 0.4, 1);
+  }
+
+  .hamburger.open {
+    padding-bottom: 5px;
+  }
+  .hamburger.open .line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+    margin-bottom: 0px;
+    transition: all 0.3s cubic-bezier(0.6, 0, 0.4, 1);
+  }
+  .hamburger.open .line:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.open .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+    margin-bottom: 0px;
+    transition: all 0.3s cubic-bezier(0.6, 0, 0.4, 1);
+  }
+
+  @media screen and (min-width: 768px) {
+    .hamburger {
+      display: none;
+    }
+  }
+</style>

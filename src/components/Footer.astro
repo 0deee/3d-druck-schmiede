@@ -7,34 +7,27 @@ const today = new Date();
 	<div>
 		<HeaderLink href="/leistungen">Leistungen</HeaderLink>
 		<HeaderLink href="/portfolio">Portfolio</HeaderLink>
-		<HeaderLink href="/3d-wiki">3D-Druck-Wiki</HeaderLink>
+		<HeaderLink href="/wiki">3D-Druck-Wiki</HeaderLink>
 		<HeaderLink href="/blog">Blog</HeaderLink>
 		<HeaderLink href="/kontakt">Kontakt</HeaderLink>
 	</div>
-	<div>
-		Impressum Datenschutz Sitemap
+	<div class="p-3">
+		<HeaderLink href="/impressum">Impressum</HeaderLink>
+		<HeaderLink href="/datenschutz">Datenschutz</HeaderLink>
+		<HeaderLink href="/sitemap">Sitemap</HeaderLink>
 	</div>
-	&copy; {today.getFullYear()} 3D-Druck-Schmiede | Diese Website dient zu Testzwecken einer Bachelor-Arbeit
+	&copy; {today.getFullYear()} 3D-Druck-Schmiede | Diese Website dient zu Testzwecken für eine Bachelor-Thesis
 	
 </footer>
 <style>
 	footer {
-		padding: 2em 1em 6em 1em;
+		padding: 2em 1em 2em 1em;
 		background: linear-gradient(var(--gray-gradient)) no-repeat;
 		color: rgb(var(--gray));
 		text-align: center;
 	}
-	.social-links {
-		display: flex;
-		justify-content: center;
-		gap: 1em;
-		margin-top: 1em;
-	}
-	.social-links a {
-		text-decoration: none;
-		color: rgb(var(--gray));
-	}
-	.social-links a:hover {
-		color: rgb(var(--gray-dark));
-	}
+
+	div a:hover {
+    color: var(--accent);
+  }
 </style>

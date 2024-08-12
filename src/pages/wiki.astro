@@ -1,0 +1,78 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSection from "../components/HeroSectionSubpages.astro";
+
+const title = "Das 3D-Druck-Wiki | 3D-Druck-Schmiede";
+const description = "Im Wiki viele 3D-Druck-Begriffe kennenlernen.";
+
+
+
+//TypeScript definition of wiki entry structure
+export interface WikiEntry {
+  id: string;
+  slug: string;
+  data: {
+    title: string;
+  };
+}
+
+//TypeScript definition of alphabetically grouped entry structure
+export interface GroupedEntries {
+  [key: string]: WikiEntry[];
+}
+
+const wikiEntries: WikiEntry[] = await getCollection('wiki');
+
+// Sort the entries alphabetically by title (assuming each entry has a "title" field)
+wikiEntries.sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+// Group entries by the first letter of their title
+const groupedEntries = wikiEntries.reduce((acc: GroupedEntries, entry: WikiEntry) => {
+  const firstLetter = entry.data.title[0].toUpperCase();
+  if (!acc[firstLetter]) {
+    acc[firstLetter] = [];
+  }
+  acc[firstLetter].push(entry);
+  return acc;
+}, {});
+
+
+---
+<BaseLayout title={title} description={description}>
+  <HeroSection backgroundGray={false}>
+    <span slot="hero-heading">3D-Druck-Wiki</span>
+  </HeroSection>
+  <section class="mx-12 md:mx-24 lg:mx-48 my-12">
+    <div class="flex flex-col">
+      <p class="text-lg mb-8 text-black text-center text-justify">
+        Dies ist unser Wiki, in welchem alle wichtigen Begriffe aus der
+        3D-Druck-Welt erklärt werden. Egal ob Sie an Druck-Verfahren, Materialtypen oder 3D-Druck-Fachjargon interessiert sind, hier werden Sie fündig.
+      </p>
+      <p class="text-lg mb-8 text-black text-center text-justify">
+        Die Begriffe sind alphabetisch geordnet, sodass Sie schnell den
+        richtigen Begriff finden und lernen können.
+      </p>
+    </div>
+  </section>
+  
+  <section class="mx-12 md:mx-24 lg:mx-48 my-12">
+    {Object.entries(groupedEntries).map(([letter, entries]) => (
+      <div class="flex">
+        <div class="flex-none w-[100px]">
+          <h2 class="text-7xl font-bold">{letter}</h2>
+        </div>
+        <div class="flex-grow">
+          <ul class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {entries.map((entry) => (
+              <li>
+                <a class="hover:text-primary" href={`/wiki/${entry.slug}`}>{entry.data.title.split(" ")[0]}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <hr class="my-6 border-[#808080]"/>
+    ))}
+  </section>
+</BaseLayout>

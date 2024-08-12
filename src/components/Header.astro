@@ -1,60 +1,92 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-//import { SITE_TITLE } from '../consts';
-import { Image } from 'astro:assets';
-import localLogo from '../images/logo.png';
+import HeaderLink from "./HeaderLink.astro";
+import HamburgerMenu from "./Hamburger.astro";
+
+import { Image } from "astro:assets";
+import localLogo from "../images/logo.png";
 ---
 
 <header>
-	<nav>
-		<h2>
-			<a href="/">
-				<Image 
-				src={localLogo} 
-				alt="3d-Druck-Schmiede Firmenlogo"
-				width="150"
-				format="webp"
-				/>
-			</a>
-		</h2>
-		<div class="internal-links">
-			<HeaderLink href="/leistungen">Leistungen</HeaderLink>
-			<HeaderLink href="/portfolio">Portfolio</HeaderLink>
-			<HeaderLink href="/3d-wiki">3D-Druck-Wiki</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/kontakt">Kontakt</HeaderLink>
-		</div>
-	</nav>
+  <nav>
+    <h1>
+      <a href="/">
+        <Image
+          src={localLogo}
+          alt="3d-Druck-Schmiede Firmenlogo"
+          width="150"
+          format="webp"
+          loading="eager"
+        />
+      </a>
+    </h1>
+    <HamburgerMenu />
+    <div class="nav-links">
+      <HeaderLink href="/leistungen">Leistungen</HeaderLink>
+      <HeaderLink href="/portfolio">Portfolio</HeaderLink>
+      <HeaderLink href="/wiki">3D-Druck-Wiki</HeaderLink>
+      <HeaderLink href="/blog">Blog</HeaderLink>
+      <HeaderLink href="/kontakt">Kontakt</HeaderLink>
+    </div>
+  </nav>
 </header>
 <style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
+  header {
+    margin: 0;
+    padding: 0 1em;
+    background: white;
+    box-shadow: 0 2px 8px rgba(var(--black), 5%);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav a {
+    padding: 1em 0.5em;
+    color: var(--black);
+    text-decoration: none;
+    display: inline-block;
+  }
+  nav a:hover {
+    color: var(--accent);
+  }
 
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		/*border-bottom: 4px solid transparent;*/
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		/*border-bottom-color: var(--accent);*/
-	}
+  nav h1 a img {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+  }
+
+  .show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    .nav-links {
+      display: block;
+      position: static;
+      width: auto;
+    }
+
+    .nav-links a {
+      padding: 15px 20px;
+    }
+  }
 </style>

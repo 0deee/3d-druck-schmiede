@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSection from "../components/HeroSectionSubpages.astro";
+
+const title = "Impressum | 3D-Druck-Schmiede";
+const description = "Datenschutz Seite der 3D-Druck-Schmiede";
+---
+
+<BaseLayout title={title} description={description}>
+  <HeroSection backgroundGray={true}>
+    <span slot="hero-heading">Impressum der 3D-Druck-Schmiede</span>
+  </HeroSection>
+  <section class="flex flex-col px-24 py-12">
+    <p>
+      <b>Oliver Dankwart</b><br />
+      Sonnenstra&szlig;e 40<br />
+      88046 Friedrichshafen
+    </p>
+
+    <h2 class="text-xl font-bold py-6">Kontakt</h2>
+    <p>
+      Telefon: 015678 450001<br />
+      E-Mail: oliver.dankwart@rwu.de
+    </p>
+
+    <h2 class="text-xl font-bold py-6">Redaktionell verantwortlich</h2>
+    <p>
+      Oliver Dankwart<br />
+      Sonnenstra&szlig;e 40<br />
+      88046 Friedrichshafen
+    </p>
+    <h2 class="text-xl font-bold py-6">Bildernachweise</h2>
+    <div>
+      @<a class="text-md text-primary hover:text-primary/80" href="https://unsplash.com">Unsplash</a>
+    </div>
+   
+  </section>
+</BaseLayout>
