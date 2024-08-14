@@ -1,17 +1,12 @@
 ---
 import { Image } from "astro:assets";
 
-const { image, employeeName, role, email } = Astro.props;
+const { image, altImage, employeeName, role, email } = Astro.props;
 ---
 
 <div class="p-4 m-2 max-w-80">
   <div class="flex justify-center">
-    <Image
-      src={image}
-      alt="Bild 3D-Printing Wiki-Eintrag"
-      width="300"
-      format="webp"
-    />
+    <Image src={image} alt={altImage} width="300" format="webp" />
   </div>
   <h3 class="text-2xl pt-4">
     {employeeName}

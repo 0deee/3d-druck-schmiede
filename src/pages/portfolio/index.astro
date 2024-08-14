@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import HeroSection from "../../components/HeroSectionSubpages.astro";
+
+const title = "Unser Portfolio | 3D-Druck-Schmiede";
+const description = "Alle abgeschlossenen Kunden-Projekte.";
+---
+
+<BaseLayout title={title} description={description}>
+  <HeroSection backgroundGray={true}>
+    <span slot="hero-heading">Portfolio</span>
+    <span slot="hero-subheading"
+      >Werfen Sie einen Blick auf unsere realisierten Projekte: Individuelle
+      3D-Drucklösungen für unsere Kunden</span
+    >
+  </HeroSection>
+</BaseLayout>
