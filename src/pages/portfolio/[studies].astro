@@ -1,0 +1,22 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import WikiPost from "../../layouts/PortfolioCaseStudyLayout.astro";
+
+export async function getStaticPaths() {
+  const caseStudies = await getCollection("case-studies");
+  return caseStudies.map((entry) => ({
+    params: { studies: entry.slug },
+    props: { entry },
+  }));
+}
+interface Props {
+  entry: CollectionEntry<"case-studies">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<WikiPost {...entry}>
+  <Content />
+</WikiPost>

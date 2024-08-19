@@ -1,0 +1,41 @@
+---
+import Card from "../utility/GenericCard.astro";
+
+import wikiImage3DPrinting from "../../images/marketing-img/3d-printing-wiki.jpg";
+import wikiImageFilament from "../../images/marketing-img/filament-wiki.jpg";
+import wikiImageFDM from "../../images/marketing-img/fdm-wiki.jpg";
+---
+
+<section class="bg-background">
+  <header>
+    <h2 class="text-5xl px-6 py-12 text-black font-bold text-center">
+      Wie funktioniert der 3D-Print überhaupt?
+    </h2>
+  </header>
+  <div class="flex flex-col md:flex-row py-6 px-6 lg:px-24 xl:px-48">
+    <Card
+      cardImage={wikiImage3DPrinting}
+      cardImageAlt="Bild 3D-Printing Wiki-Eintrag"
+      cardTitle="Was ist 3D-Printing"
+      cardText="Erfahren Sie, wie der 3D-Druck das Produktdesign revolutioniert und schnelle, präzise Herstellung ermöglicht."
+      cardButtonText="Zum Wiki-Eintrag"
+      cardButtonLink="/wiki/was-ist-3d-printing"
+    />
+    <Card
+      cardImage={wikiImageFilament}
+      cardImageAlt="Bild Filament Wiki-Eintrag"
+      cardTitle="Filamente im Überblick"
+      cardText="Tauchen Sie ein in die Welt der Filamente und lernen Sie die verschiedenen Materialien und ihre Einsatzmöglichkeiten kennen."
+      cardButtonText="Zum Wiki-Eintrag"
+      cardButtonLink="/wiki/was-ist-filament"
+    />
+    <Card
+      cardImage={wikiImageFDM}
+      cardImageAlt="Was ist FDM?"
+      cardTitle="Filamente im Überblick"
+      cardText="Erkunden Sie das FDM-Verfahren und verstehen Sie, wie durch sie besonders präzise und detailreiche Druckergebnisse liefert."
+      cardButtonText="Zum Wiki-Eintrag"
+      cardButtonLink="/wiki/was-ist-fdm"
+    />
+  </div>
+</section>

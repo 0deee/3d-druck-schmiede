@@ -5,12 +5,12 @@ import WikiPost from "../../layouts/WikiPostLayout.astro";
 export async function getStaticPaths() {
   const wikiEntries = await getCollection("wiki");
   return wikiEntries.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { wikiEntries: entry.slug },
     props: { entry },
   }));
 }
 interface Props {
-  entry: CollectionEntry<'wiki'>;
+  entry: CollectionEntry<"wiki">;
 }
 
 const { entry } = Astro.props;

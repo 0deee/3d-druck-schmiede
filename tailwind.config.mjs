@@ -12,7 +12,9 @@ export default {
 			'secondary': '#efe37d',
 			'accent': '#62eb58',
 			'white': '#ffffff',
-			'black': '#0f1219'
+			'black': '#0f1219',
+			'red': '#ef4444',
+			'green': '#16a34a'
 		}
 	},
 	plugins: [],

@@ -4,7 +4,6 @@ description: "Erfahren Sie, was ein Layer im 3D-Druck ist und wie die Schichtdic
 author: "Lukas Braun"
 pubDate: 2024-02-04
 termType: "3D-Druckprozess"
-keywords: ["Layer", "3D-Druck Schicht", "Layerhöhe", "3D-Druck Qualität", "Schichtdicke"]
 ---
 
 ## Was ist ein Layer?

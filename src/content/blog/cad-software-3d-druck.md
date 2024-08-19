@@ -1,22 +1,12 @@
 ---
-title: "Die Rolle von CAD-Software im 3D-Druck: Wie digitale Modelle Realität werden"
-description: "Erfahren Sie, wie CAD-Software den 3D-Druck revolutioniert. Von der Erstellung digitaler Modelle bis zur Vorbereitung für den Druck – entdecken Sie die entscheidenden Schritte, um Ideen in die Realität umzusetzen."
-author: "3D-Druck-Schmiede"
+title: "Die Rolle von CAD im 3D-Druck: Wie digitale Modelle Realität werden"
+description: "Erfahren Sie, wie CAD-Software den 3D-Druck revolutioniert. Von digitalen Modellen bis zur Druckvorbereitung – entdecken Sie, wie Ideen zur Realität werden."
+author: "Paul Berger"
 pubDate: 2024-05-25
 heroImage: "../../images/blog-img/3d-print-blog-cad.jpg"
 heroImageAlt: "Bildschirm mit CAD-Software, die ein 3D-Modell anzeigt"
 category: "Technik"
-keywords:
-  [
-    "3D-Druck",
-    "CAD-Software",
-    "digitale Modelle",
-    "3D-Modellierung",
-    "Technik im 3D-Druck",
-  ]
 ---
-
-# Die Rolle von CAD-Software im 3D-Druck: Wie digitale Modelle Realität werden
 
 Der 3D-Druck hat das Potenzial, nahezu jede Idee in die Realität umzusetzen, aber dieser Prozess beginnt nicht erst beim Drucker. Der erste und wichtigste Schritt ist die Erstellung eines digitalen Modells, und hier kommt CAD-Software (Computer-Aided Design) ins Spiel. In diesem Artikel beleuchten wir die Rolle von CAD-Software im 3D-Druck, zeigen, wie digitale Modelle erstellt werden, und geben Tipps, wie Sie Ihre Designs für den Druck optimieren können.
 

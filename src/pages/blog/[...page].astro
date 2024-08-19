@@ -2,11 +2,13 @@
 import { Image } from "astro:assets";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import HeroSection from "../../components/HeroSectionSubpages.astro";
+import HeroSection from "../../components/sections/HeroSectionSubpages.astro";
+import BlogPostCard from "../../components/utility/BlogPostCard.astro";
+import PaginationControls from "../../components/utility/PaginationControls.astro";
 
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
+import FormattedDate from "../../components/utility/FormattedDate.astro";
 
 export async function getStaticPaths({ paginate }) {
   const posts = (await getCollection("blog")).sort(
@@ -24,12 +26,12 @@ interface PageProps {
     next?: string;
   };
 }
+const title = "Blog - Neuigkeiten rund um den 3D-Druck";
+const description =
+  "Interessante Blog-Artikel rund um den 3D-Druck. Die neuesten Trends und Techniken nur im 3D-Druck-Schmiede-Blog.";
 
 // All paginated data is passed on the "page" prop
 const { page }: { page: PageProps } = Astro.props;
-
-const title = "Blog | 3D-Druck-Schmiede";
-const description = "Interessante Blog-Artikel rund um den 3D-Druck.";
 ---
 
 <BaseLayout title={title} description={description}>
@@ -46,74 +48,10 @@ const description = "Interessante Blog-Artikel rund um den 3D-Druck.";
     >
       {
         page.data.map((post) => (
-          <article class="mx-2 lg:first:col-span-2">
-            <a href={`/blog/${post.slug}`}>
-              {post.data.heroImage && post.data.heroImageAlt && (
-                <Image
-                  class="rounded-lg md:w-full h-84 md:h-48 lg:h-96 object-cover first:lg:h-[40rem]"
-                  src={post.data.heroImage}
-                  format="webp"
-                  alt={post.data.heroImageAlt}
-                />
-              )}
-            </a>
-            <div class="flex flex-row items-center text-sm md:text-md lg:text-base my-2">
-              <div>
-                <svg
-                  class="inline-block fill-white w-4 md:w-12 rounded-full bg-primary-light p-1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <>
-                    <title>account icon</title>
-                    <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
-                  </>
-                </svg>
-              </div>
-              <p class="mx-2">{post.data.author}</p>
-              <div class="bg-primary-lighter rounded-full h-0.5 md:h-1 w-0.5 md:w-1 aria-hidden" />
-              <div class="mx-2">
-                <FormattedDate date={post.data.pubDate} />
-              </div>
-              <div class="bg-primary-lighter rounded-full h-0.5 md:h-1 w-0.5 md:w-1 aria-hidden" />
-
-              <div class="mx-2 ">
-                <a
-                  href={`/kategorie/${post.data.category.toLowerCase()}`}
-                  class="hover:underline break-words"
-                >
-                  {post.data.category}
-                </a>
-              </div>
-            </div>
-            <a
-              class="hover:text-primary transition ease-in delay-150"
-              href={`/blog/${post.slug}`}
-            >
-              <h2 class="my-4 text-2xl md:text-4xl text-center md:text-left font-semibold">
-                {post.data.title}
-              </h2>
-            </a>
-          </article>
+          <BlogPostCard post={post} isBlogMainPage={true} />
         ))
       }
     </div>
   </section>
-  <!-- Pagination Controls -->
-  <div class="flex justify-center space-x-4 my-8">
-    {
-      page.url.prev ? (
-        <div class="bg-primary-light text-white py-2.5 px-3.5 rounded-md shadow-sm font-semibold text-sm hover:bg-primary/80 transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/80">
-          <a href={page.url.prev}>Vorherige Seite</a>
-        </div>
-      ) : null
-    }
-    {
-      page.url.next ? (
-        <div class="bg-primary-light text-white py-2.5 px-3.5 rounded-md shadow-sm font-semibold text-sm hover:bg-primary/80 transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/80">
-          <a href={page.url.next}>Nächste Seite</a>
-        </div>
-      ) : null
-    }
-  </div>
+  <PaginationControls page={page} />
 </BaseLayout>

@@ -1,0 +1,112 @@
+---
+import TeamMemberCard from "../utility/TeamMemberCard.astro";
+
+// import images separately
+import oliverImage from "../../images/team/od2-image.jpg";
+import jonasImage from "../../images/team/jw-image.jpg";
+import annaImage from "../../images/team/am-image.jpg";
+import ninaImage from "../../images/team/nf-image.jpg";
+import alexImage from "../../images/team/alexm-image.jpg";
+import tomImage from "../../images/team/tm-image.jpg";
+import laraImage from "../../images/team/ls-image.jpg";
+import lukasImage from "../../images/team/lb-image.jpg";
+import paulImage from "../../images/team/pb-image.jpg";
+import fkImage from "../../images/team/fk-image.jpg";
+
+// array of team members
+const teamMembers = [
+  {
+    image: oliverImage,
+    altImage: "Bild Teammitglied Oliver Dankwart",
+    employeeName: "Oliver Dankwart",
+    role: "CEO",
+    email: "oliver.dankwart@3d-druck-schmiede.de",
+  },
+  {
+    image: alexImage,
+    altImage: "Bild Teammitglied Alex Müller",
+    employeeName: "Alex Müller",
+    role: "CTO",
+    email: "alex.muellert@3d-druck-schmiede.de",
+  },
+  {
+    image: jonasImage,
+    altImage: "Bild Teammitglied Jonas Weber",
+    employeeName: "Jonas Weber",
+    role: "CMO",
+    email: "jonas.weber@3d-druck-schmiede.de",
+  },
+  {
+    image: ninaImage,
+    altImage: "Bild Teammitglied Nina Fischer",
+    employeeName: "Nina Fischer",
+    role: "Business Development",
+    email: "nina.fischer@3d-druck-schmiede.de",
+  },
+  {
+    image: tomImage,
+    altImage: "Bild Teammitglied Tom Schulz",
+    employeeName: "Tom Schulz",
+    role: "Projektmanager",
+    email: "tom.schulz@3d-druck-schmiede.de",
+  },
+  {
+    image: laraImage,
+    altImage: "Bild Teammitglied Lara Schmidt",
+    employeeName: "Lara Schmidt",
+    role: "3D-Druck-Technikerin",
+    email: "lara.schmidt@3d-druck-schmiede.de",
+  },
+  {
+    image: paulImage,
+    altImage: "Bild Teammitglied Paul Berger",
+    employeeName: "Paul Berger",
+    role: "3D-Druck-Techniker",
+    email: "paul.berger@3d-druck-schmiede.de",
+  },
+  {
+    image: lukasImage,
+    altImage: "Bild Teammitglied Lukas Braun",
+    employeeName: "Lukas Braun",
+    role: "3D-Modeler",
+    email: "lukas.braun@3d-druck-schmiede.de",
+  },
+  {
+    image: fkImage,
+    altImage: "Bild Teammitglied Felix König",
+    employeeName: "Felix König",
+    role: "3D-Modeler",
+    email: "felix.koenig@3d-druck-schmiede.de",
+  },
+  {
+    image: annaImage,
+    altImage: "Bild Teammitglied Anna Meier",
+    employeeName: "Anna Meier",
+    role: "Backoffice",
+    email: "anna.meier@3d-druck-schmiede.de",
+  },
+];
+---
+
+<section id="teamvorstellung">
+  <header>
+    <h2 class="text-5xl px-12 lg:px-28 pt-12 text-black font-bold">
+      Das 3D-Druck-Schmiede-Team
+    </h2>
+  </header>
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 items-center justify-center py-12 px-6 lg:px-24"
+  >
+    {
+      teamMembers.map((member) => (
+        <TeamMemberCard
+          image={member.image}
+          altImage={member.altImage}
+          employeeName={member.employeeName}
+          role={member.role}
+          email={member.email}
+        />
+      ))
+    }
+  </div>
+</section>

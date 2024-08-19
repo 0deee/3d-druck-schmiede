@@ -1,22 +1,12 @@
 ---
-title: "Wie funktioniert 3D-Druck wirklich? Ein tiefer Einblick in die Technik hinter dem Druck"
-description: "Entdecken Sie, wie 3D-Druck tatsächlich funktioniert. Dieser Artikel bietet einen detaillierten Einblick in die verschiedenen Technologien und Prozesse, die hinter dem 3D-Druck stehen."
+title: "Wie funktioniert 3D-Druck wirklich? Ein tiefer Einblick in die Technik"
+description: "Erfahren Sie, wie 3D-Druck wirklich funktioniert. Ein Einblick in die Technologien und Prozesse, die den 3D-Druck ermöglichen und Ihre Projekte realisieren."
 author: "Paul Berger"
 pubDate: 2024-05-02
 heroImage: "../../images/blog-img/3d-druck-blog-technik-hero.jpg"
 heroImageAlt: "Nahaufnahme eines 3D-Druckers bei der Arbeit"
 category: "Technik"
-keywords:
-  [
-    "3D-Druck",
-    "Technik hinter 3D-Druck",
-    "3D-Druckverfahren",
-    "Wie funktioniert 3D-Druck",
-    "Additive Fertigung",
-  ]
 ---
-
-# Wie funktioniert 3D-Druck wirklich? Ein tiefer Einblick in die Technik hinter dem Druck
 
 Der 3D-Druck hat die Art und Weise, wie wir Dinge herstellen, revolutioniert. Doch wie genau funktioniert diese faszinierende Technologie? In diesem Artikel werfen wir einen detaillierten Blick auf die Technik hinter dem 3D-Druck, von den grundlegenden Prinzipien bis hin zu den verschiedenen Druckverfahren, die heute im Einsatz sind.
 

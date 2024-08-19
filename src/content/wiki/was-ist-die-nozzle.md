@@ -4,7 +4,6 @@ description: "Erfahren Sie alles über die Nozzle im 3D-Druck, ein zentrales Bau
 author: "Paul Berger"
 pubDate: 2024-02-24
 termType: "3D-Druckkomponente"
-keywords: ["Nozzle", "3D-Druck Düse", "Nozzle Typen", "Nozzle Größen", "3D-Druck Nozzle Material"]
 ---
 
 ## Was ist eine Nozzle?

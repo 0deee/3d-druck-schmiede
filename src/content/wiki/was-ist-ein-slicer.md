@@ -4,7 +4,6 @@ description: "Erfahren Sie, was ein Slicer ist und wie er im 3D-Druck verwendet 
 author: "Lukas Braun"
 pubDate: 2024-03-07
 termType: "3D-Drucksoftware"
-keywords: ["Slicer", "3D-Druck Slicer", "Slicer Software", "G-Code", "3D-Druckvorbereitung"]
 ---
 
 ## Was ist ein Slicer?

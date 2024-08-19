@@ -4,7 +4,6 @@ description: "Erfahren Sie alles über den Extruder im 3D-Druck, das zentrale Ba
 author: "Lara Schmidt"
 pubDate: 2024-02-16
 termType: "3D-Druckkomponente"
-keywords: ["Extruder", "3D-Druck Extruder", "Direkt-Extruder", "Bowden-Extruder", "Filamentförderung"]
 ---
 
 ## Was ist ein Extruder?
@@ -30,10 +29,12 @@ Es gibt zwei Haupttypen von Extrudern im 3D-Druck, die sich durch ihre Position 
 Beim Direkt-Extruder ist der Extruder direkt am Hotend montiert. Diese Bauweise ermöglicht eine sehr präzise Kontrolle der Filamentförderung, da das Filament nur eine kurze Strecke zurücklegen muss, bevor es geschmolzen wird. Dies macht den Direkt-Extruder ideal für flexible Filamente, die eine gleichmäßige Zuführung erfordern.
 
 **Vorteile:**
+
 - Präzise Filamentkontrolle
 - Besser geeignet für flexible und weichere Filamente
 
 **Nachteile:**
+
 - Schwerer Druckkopf, was zu möglichen Vibrationen und reduzierter Druckgeschwindigkeit führen kann
 
 ### Bowden-Extruder
@@ -41,10 +42,12 @@ Beim Direkt-Extruder ist der Extruder direkt am Hotend montiert. Diese Bauweise 
 Der Bowden-Extruder ist vom Hotend getrennt und führt das Filament über ein PTFE-Rohr (Bowden-Schlauch) zum Hotend. Diese Konstruktion führt zu einem leichteren Druckkopf, was höhere Druckgeschwindigkeiten ermöglicht.
 
 **Vorteile:**
+
 - Leichterer Druckkopf, was schnellere Bewegungen ermöglicht
 - Geringere Masse, was die Präzision bei hohen Geschwindigkeiten erhöht
 
 **Nachteile:**
+
 - Weniger Kontrolle bei flexiblen Filamenten aufgrund der längeren Filamentführung
 
 ## Wichtige Aspekte des Extruders

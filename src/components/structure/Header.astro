@@ -3,7 +3,7 @@ import HeaderLink from "./HeaderLink.astro";
 import HamburgerMenu from "./Hamburger.astro";
 
 import { Image } from "astro:assets";
-import localLogo from "../images/logo.png";
+import localLogo from "../../images/logo.png";
 ---
 
 <header>
@@ -13,7 +13,7 @@ import localLogo from "../images/logo.png";
         <Image
           src={localLogo}
           alt="3d-Druck-Schmiede Firmenlogo"
-          width="150"
+          width="500"
           format="webp"
           loading="eager"
         />
@@ -30,6 +30,9 @@ import localLogo from "../images/logo.png";
   </nav>
 </header>
 <style>
+  nav h1 {
+    width: 11rem;
+  }
   header {
     margin: 0;
     padding: 0 1em;

@@ -1,10 +1,9 @@
 ---
-title: "3D-Printing"
+title: "3D-Printing - Was ist das überhaupt?"
 description: "Erfahren Sie alles über 3D-Printing, die revolutionäre Fertigungstechnik, die Schicht für Schicht dreidimensionale Objekte erstellt. Entdecken Sie die Technologien, Anwendungen und Vorteile des 3D-Drucks."
 author: "Jonas Weber"
 pubDate: 2024-04-06
 termType: "Allgemein"
-keywords: ["3D-Printing", "3D-Druck", "additive Fertigung", "3D-Druck-Technologie", "Rapid Prototyping"]
 ---
 
 ## Was ist 3D-Printing?

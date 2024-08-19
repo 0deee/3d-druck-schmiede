@@ -1,23 +1,12 @@
 ---
-title: "3D-Druckmaterialien im Vergleich: Welches Filament ist das richtige für Ihr Projekt?"
-description: "Erfahren Sie alles über die verschiedenen 3D-Druckmaterialien und finden Sie heraus, welches Filament am besten zu Ihrem Projekt passt. Ein umfassender Vergleich von PLA, ABS, PETG und weiteren Filamenten."
+title: "3D-Druckmaterialien im Vergleich: Welches Filament passt zu Ihnen?"
+description: "Vergleichen Sie 3D-Druckmaterialien wie PLA, ABS, PETG. Finden Sie heraus, welches Filament am besten für Ihr Projekt geeignet ist. Ein umfassender Leitfaden."
 author: "Lukas Braun"
 pubDate: 2024-01-22
 heroImage: "../../images/blog-img/filament-spools-blog-filament.webp"
 heroImageAlt: "Verschiedene 3D-Druck-Filamente auf einem Tisch"
 category: "Material"
-keywords:
-  [
-    "3D-Druckmaterialien",
-    "Filament Vergleich",
-    "PLA",
-    "ABS",
-    "PETG",
-    "Welches Filament wählen",
-  ]
 ---
-
-# 3D-Druckmaterialien im Vergleich: Welches Filament ist das richtige für Ihr Projekt?
 
 Die Wahl des richtigen Filaments ist entscheidend für den Erfolg Ihres 3D-Druckprojekts. Jedes Material hat seine eigenen Eigenschaften, Vor- und Nachteile, die es für bestimmte Anwendungen mehr oder weniger geeignet machen. In diesem Artikel vergleichen wir die gängigsten 3D-Druckmaterialien und helfen Ihnen, das richtige Filament für Ihr Projekt zu finden.
 

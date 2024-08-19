@@ -1,0 +1,81 @@
+---
+import { Image } from "astro:assets";
+
+import FormattedDate from "../utility/FormattedDate.astro";
+import Icon from "../utility/GenericIcon.astro";
+
+interface PostData {
+  slug: string;
+  data: {
+    author: string;
+    heroImage?: ImageMetadata;
+    heroImageAlt?: string;
+    pubDate: Date;
+    category: string;
+    title: string;
+  };
+}
+
+export interface Props {
+  post: PostData;
+  isBlogMainPage: Boolean;
+}
+
+const { post, isBlogMainPage } = Astro.props;
+---
+
+<article class:list={["mx-2", { "lg:first:col-span-2": isBlogMainPage }]}>
+  <a href={`/blog/${post.slug}`}>
+    {
+      post.data.heroImage && post.data.heroImageAlt && (
+        <Image
+          class:list={[
+            "rounded-lg md:w-full h-84 md:h-48 lg:h-96 object-cover",
+            { "first:lg:h-[40rem]": isBlogMainPage },
+          ]}
+          src={post.data.heroImage}
+          format="webp"
+          alt={post.data.heroImageAlt}
+        />
+      )
+    }
+  </a>
+  <div class="flex flex-row items-center text-sm md:text-md lg:text-base my-2">
+    <Icon
+      iconWidth="12"
+      icon="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
+      isResponsive={true}
+    />
+    <p class="mx-2">{post.data.author}</p>
+    <div
+      class="bg-primary-lighter rounded-full h-0.5 md:h-1 w-0.5 md:w-1 aria-hidden"
+    >
+    </div>
+    <div class="mx-2">
+      <FormattedDate date={post.data.pubDate} />
+    </div>
+    <div
+      class="bg-primary-lighter rounded-full h-0.5 md:h-1 w-0.5 md:w-1 aria-hidden"
+    >
+    </div>
+
+    <div class="mx-2">
+      <a
+        href={`/kategorie/${post.data.category.toLowerCase()}`}
+        class="hover:underline break-words"
+      >
+        {post.data.category}
+      </a>
+    </div>
+  </div>
+  <a
+    class="hover:text-primary transition ease-in delay-150"
+    href={`/blog/${post.slug}`}
+  >
+    <h2
+      class="my-4 text-2xl md:text-4xl text-center md:text-left font-semibold"
+    >
+      {post.data.title}
+    </h2>
+  </a>
+</article>

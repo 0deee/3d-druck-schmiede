@@ -1,0 +1,33 @@
+---
+import FormattedDate from "../utility/FormattedDate.astro";
+
+const { randomWikiEntries } = Astro.props;
+---
+
+<section>
+  <div class="flex items-center justify-center py-6 px-6 lg:px-24 text-center">
+    <header class="max-w-2xl">
+      <h2 class="text-5xl mb-4 font-bold text-black">Ähnliche Wiki-Artikel</h2>
+    </header>
+  </div>
+  <div
+    class="grid grid-cols-1 lg:grid-cols-3 mx-6 md:mx-6 lg:mx-16 xl:mx-48 2xl:mx-72"
+  >
+    {
+      randomWikiEntries.map((entry) => (
+        <div class="flex flex-col items-center justify-center bg-background mx-6 my-6 py-4">
+          <a class="text-xl font-bold" href={`/wiki/${entry.slug}`}>
+            {entry.data.title.split(" ")[0]}
+          </a>
+          <p class="px-10 py-4 text-center">{entry.data.description}</p>
+          <div class="flex flex-col md:flex-row items-center justify-center text-md">
+            <div class="mx-2">
+              <FormattedDate date={entry.data.pubDate} />
+            </div>
+            <p class="mx-2">{entry.data.termType}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

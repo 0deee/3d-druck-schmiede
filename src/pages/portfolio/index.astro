@@ -1,12 +1,20 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import HeroSection from "../../components/HeroSectionSubpages.astro";
+import { Image } from "astro:assets";
+import { ViewTransitions } from "astro:transitions";
+import { getCollection } from "astro:content";
 
-const title = "Unser Portfolio | 3D-Druck-Schmiede";
-const description = "Alle abgeschlossenen Kunden-Projekte.";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import HeroSection from "../../components/sections/HeroSectionSubpages.astro";
+
+const caseStudies = await getCollection("case-studies");
+
+const title = "Portfolio – Überzeugende Druck-Projekte";
+const description =
+  "Entdecken Sie unser Portfolio an maßgeschneiderten 3D-Druck-Projekten. Sehen Sie, wie wir innovative Lösungen für verschiedene Branchen realisieren.";
 ---
 
 <BaseLayout title={title} description={description}>
+  <ViewTransitions slot="in-head" />
   <HeroSection backgroundGray={true}>
     <span slot="hero-heading">Portfolio</span>
     <span slot="hero-subheading"
@@ -14,4 +22,25 @@ const description = "Alle abgeschlossenen Kunden-Projekte.";
       3D-Drucklösungen für unsere Kunden</span
     >
   </HeroSection>
+  <section>
+    <div
+      class="grid grid-cols-1 lg:grid-cols-3 gap-6 my-8 mx-6 md:mx-6 lg:mx8 xl:mx-24 2xl:mx-48"
+    >
+      {
+        caseStudies.map((study) => (
+          <div>
+            <a href={`/portfolio/${study.slug}`} class="">
+              <Image
+                class="rounded-lg md:w-full h-84 lg:h-96 object-cover	 transition ease-in-out hover:-translate-y-1 hover:scale-105 motion-reduce:transition-none motion-reduce:hover:transform-none"
+                src={study.data.caseStudyImage}
+                format="webp"
+                alt={study.data.caseStudyImageAlt}
+                transition:name={study.id}
+              />
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </section>
 </BaseLayout>

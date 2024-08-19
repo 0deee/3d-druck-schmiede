@@ -1,10 +1,9 @@
 ---
-title: "SLS (Selective Laser Sintering) – Hochwertiger 3D-Druck mit Pulvermaterialien"
+title: "SLS – Hochwertiger 3D-Druck mit Pulvermaterialien"
 description: "Erfahren Sie alles über SLS (Selective Laser Sintering), ein 3D-Druckverfahren, das Pulvermaterialien mittels Laser verschmilzt. Entdecken Sie die Funktionsweise, Vorteile und Anwendungsbereiche von SLS."
 author: "Lukas Braun"
 pubDate: 2024-05-17
 termType: "3D-Druckverfahren"
-keywords: ["SLS", "Selective Laser Sintering", "SLS 3D-Druck", "SLS Verfahren", "Pulversintern"]
 ---
 
 ## Was ist SLS?

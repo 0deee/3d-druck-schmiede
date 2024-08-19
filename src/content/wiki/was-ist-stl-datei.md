@@ -4,7 +4,6 @@ description: "Erfahren Sie alles über die STL-Datei, das Standardformat für 3D
 author: "Paul Berger"
 pubDate: 2024-05-05
 termType: "3D-Druckformat"
-keywords: ["STL-Datei", "3D-Druck STL", "STL-Format", "3D-Modellierung", "3D-Druck Datei"]
 ---
 
 ## Was ist eine STL-Datei?
@@ -35,11 +34,13 @@ STL-Dateien werden typischerweise mit 3D-Modellierungssoftware wie Blender, Tink
 ## Vorteile und Einschränkungen der STL-Datei
 
 **Vorteile:**
+
 - **Weite Verbreitung:** Das STL-Format wird von nahezu allen 3D-Druckern und Slicer-Software unterstützt.
 - **Einfachheit:** Durch die einfache Darstellung als Dreiecksnetz ist das Format leicht zu verarbeiten und ermöglicht effizientes Slicing.
 - **Dateigröße:** STL-Dateien sind im Binärformat relativ kompakt und können große Modelle effizient speichern.
 
 **Einschränkungen:**
+
 - **Keine Farbinformationen:** Das Format speichert keine Farben, Texturen oder Materialeigenschaften, was es für farbige oder materialkomplexe Drucke weniger geeignet macht.
 - **Genauigkeit:** Bei komplexen Geometrien oder sehr feinen Details kann die Dreiecksauflösung unzureichend sein, was zu einer geringeren Oberflächengenauigkeit führt.
 - **Kein nativer Support für Maßeinheiten:** Das Format definiert keine spezifischen Maßeinheiten, was zu Skalierungsproblemen führen kann, wenn die Datei in verschiedenen Programmen verwendet wird.

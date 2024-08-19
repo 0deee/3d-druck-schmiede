@@ -4,7 +4,6 @@ description: "Erfahren Sie alles über Supports im 3D-Druck, unverzichtbare Stü
 author: "Paul Berger"
 pubDate: 2024-04-22
 termType: "3D-Drucktechnik"
-keywords: ["Supports", "Stützstrukturen", "3D-Druck Supports", "Überhänge", "Supportmaterial"]
 ---
 
 ## Was sind Supports?
@@ -47,10 +46,12 @@ Nach dem Druck müssen die Supportstrukturen entfernt werden:
 ## Vor- und Nachteile von Supports
 
 **Vorteile:**
+
 - Ermöglichen den Druck komplexer Geometrien mit Überhängen.
 - Unterstützen freitragende Strukturen und verhindern Verformungen.
 
 **Nachteile:**
+
 - Erhöhen den Materialverbrauch und die Druckzeit.
 - Können sichtbare Spuren oder Unebenheiten auf der Oberfläche des Modells hinterlassen.
 - Erfordern zusätzliche Nachbearbeitung, um entfernt zu werden.

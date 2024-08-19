@@ -1,22 +1,12 @@
 ---
-title: "3D-Druck in der Architektur: Vom Konzeptmodell zum realen Bau"
-description: "Entdecken Sie, wie der 3D-Druck die Architektur revolutioniert. Von der Erstellung detaillierter Konzeptmodelle bis hin zum Bau vollwertiger Strukturen – erfahren Sie, wie diese Technologie den Bauprozess verändert."
+title: "3D-Druck in der Architektur: Vom Konzept zum realen Bau"
+description: "Erfahren Sie, wie 3D-Druck in der Architektur von detaillierten Konzeptmodellen bis hin zum Bau vollwertiger Strukturen den Bauprozess revolutioniert."
 author: "Lukas Braun"
 pubDate: 2024-03-22
 heroImage: "../../images/blog-img/3d-print-blog-architektur-hero.jpg"
 heroImageAlt: "Person arbeitet an Architektur Design Hero Shot"
 category: "Anwendungsgebiete"
-keywords:
-  [
-    "3D-Druck",
-    "Architektur",
-    "Konzeptmodelle",
-    "Bauindustrie",
-    "3D-Druck im Bauwesen",
-  ]
 ---
-
-# 3D-Druck in der Architektur: Vom Konzeptmodell zum realen Bau
 
 Der 3D-Druck hat sich zu einem unverzichtbaren Werkzeug in der Architektur entwickelt. Diese innovative Technologie ermöglicht es Architekten, ihre Visionen schnell und präzise in greifbare Modelle umzusetzen. Doch der Einsatz von 3D-Druck in der Architektur geht weit über die Erstellung von Konzeptmodellen hinaus. In diesem Artikel werfen wir einen detaillierten Blick darauf, wie der 3D-Druck in der Architektur eingesetzt wird – von der ersten Idee bis hin zum realen Bau.
 

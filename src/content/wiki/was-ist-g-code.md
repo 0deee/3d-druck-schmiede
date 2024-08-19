@@ -4,7 +4,6 @@ description: "Erfahren Sie, was G-Code ist und wie er im 3D-Druck verwendet wird
 author: "Lara Schmidt"
 pubDate: 2024-01-12
 termType: "3D-Drucksteuerung"
-keywords: ["G-Code", "3D-Druck G-Code", "G-Code Befehle", "3D-Druck Steuerung", "Druckerprogrammierung"]
 ---
 
 ## Was ist G-Code?

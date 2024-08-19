@@ -1,0 +1,45 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+const today = new Date();
+---
+
+<footer>
+  <div>
+    <HeaderLink href="/leistungen">Leistungen</HeaderLink>
+    <HeaderLink href="/portfolio">Portfolio</HeaderLink>
+    <HeaderLink href="/wiki">3D-Druck-Wiki</HeaderLink>
+    <HeaderLink href="/blog">Blog</HeaderLink>
+    <HeaderLink href="/kontakt">Kontakt</HeaderLink>
+  </div>
+  <div class="p-3">
+    <HeaderLink href="/impressum">Impressum</HeaderLink>
+    <HeaderLink href="/datenschutz">Datenschutz</HeaderLink>
+    <HeaderLink href="/sitemap-index.xml">Sitemap</HeaderLink>
+  </div>
+  <div class="flex flex-row items-center justify-center mb-2">
+    <a href="/rss.xml">
+      <svg
+        class="fill-primary w-8"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        ><title>rss-box</title><path
+          d="M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M7.5,15A1.5,1.5 0 0,0 6,16.5A1.5,1.5 0 0,0 7.5,18A1.5,1.5 0 0,0 9,16.5A1.5,1.5 0 0,0 7.5,15M6,10V12A6,6 0 0,1 12,18H14A8,8 0 0,0 6,10M6,6V8A10,10 0 0,1 16,18H18A12,12 0 0,0 6,6Z"
+        ></path></svg
+      ></a
+    >
+  </div>
+  &copy; {today.getFullYear()} 3D-Druck-Schmiede | Diese Website dient zu Testzwecken
+  für eine Bachelor-Thesis
+</footer>
+<style>
+  footer {
+    padding: 2em 1em 2em 1em;
+    background: linear-gradient(var(--gray-gradient)) no-repeat;
+    color: rgb(var(--gray));
+    text-align: center;
+  }
+
+  div a:hover {
+    color: var(--accent);
+  }
+</style>

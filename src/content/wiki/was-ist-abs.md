@@ -1,10 +1,9 @@
 ---
-title: "ABS (Acrylnitril-Butadien-Styrol-Copolymer) – Robustes Filament für den 3D-Druck"
+title: "ABS – Robustes Filament für den 3D-Druck"
 description: "Erfahren Sie alles über ABS (Acrylnitril-Butadien-Styrol-Copolymer), ein beliebtes Filament im 3D-Druck. Entdecken Sie die Eigenschaften, Anwendungen und Vorteile dieses robusten Kunststoffs."
 author: "Lukas Braun"
 pubDate: 2024-04-02
 termType: "3D-Druckmaterial"
-keywords: ["ABS Filament", "3D-Druck ABS", "Acrylnitril-Butadien-Styrol", "ABS Eigenschaften", "ABS Anwendungen"]
 ---
 
 ## Was ist ABS?

@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+
+import GenericButton from "../utility/GenericButton.astro";
+
+export interface Props {
+  buttonText?: string;
+  buttonLink?: string;
+  heroImage: ImageMetadata;
+  buttonPrimary: boolean;
+}
+
+// props for component customization
+const { buttonText, buttonLink, buttonPrimary, heroImage } = Astro.props;
+---
+
+<section
+  id="hero-section"
+  class="bg-gradient-to-r from-primary to-primary-lighter md:bg-none md:bg-background"
+>
+  <div class="flex items-center justify-center py-32 px-6 lg:px-24">
+    <header class="max-w-lg">
+      <h1 class="text-5xl md:text-7xl mb-4 text-white md:text-black font-bold">
+        <slot name="heading-content" />
+      </h1>
+      <p class="text-xl mb-8 text-white md:text-black">
+        <slot name="subheading-content" />
+      </p>
+      <GenericButton
+        buttonText={buttonText}
+        buttonLink={buttonLink}
+        buttonPrimary={buttonPrimary}
+      />
+    </header>
+
+    <div class="hidden md:block ml-8 xl:ml-24">
+      <Image
+        src={heroImage}
+        alt="hero-shot 3D-Druck-Schmiede"
+        width="500"
+        format="webp"
+        loading="eager"
+        class="border-1 border-white rounded-lg shadow-lg"
+      />
+    </div>
+  </div>
+</section>

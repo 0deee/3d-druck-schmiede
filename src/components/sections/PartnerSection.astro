@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+const partnerLogos = import.meta.glob<{ default: ImageMetadata }>(
+  "../../images/partner-logo/*.{jpeg,jpg,png,gif}",
+  { eager: true }
+);
+---
+
+<section id="partner">
+  <header>
+    <h2
+      class="text-5xl px-6 pt-12 text-black font-bold text-center break-words"
+    >
+      Starke Partnerschaften – Erfolgreiche Projekte
+    </h2>
+  </header>
+  <div
+    class="grid grid-cols-2 md:grid-cols-3 gap-2 items-center justify-center py-12 px-6 lg:px-24"
+  >
+    {
+      /* map over imported logos
+        only 6 images allowed */
+      Object.entries(partnerLogos)
+        .slice(0, 6)
+        .map(([path, module]) => (
+          <div class="flex justify-center">
+            <Image
+              src={module.default}
+              alt={
+                path
+                  .split("/")
+                  .pop()
+                  ?.replace(/-/g, " ")
+                  ?.replace(".png", " partner") ?? "partner logo"
+              }
+              width="200"
+              format="webp"
+            />
+          </div>
+        ))
+    }
+  </div>
+</section>

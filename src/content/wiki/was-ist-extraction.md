@@ -4,7 +4,6 @@ description: "Erfahren Sie, was unter 'Extraction' im 3D-Druck verstanden wird. 
 author: "Paul Berger"
 pubDate: 2024-03-13
 termType: "3D-Druckprozess"
-keywords: ["Extraction", "3D-Druck Extrusion", "Materialextrusion", "Filamentextrusion", "3D-Druck Qualität"]
 ---
 
 ## Was ist Extraction?

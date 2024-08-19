@@ -1,10 +1,9 @@
 ---
-title: "FDM (Fused Deposition Modeling) – Das meistgenutzte Verfahren im 3D-Druck"
+title: "FDM – Das meistgenutzte Verfahren im 3D-Druck"
 description: "Erfahren Sie alles über FDM (Fused Deposition Modeling), das weltweit am häufigsten eingesetzte 3D-Druckverfahren. Entdecken Sie die Funktionsweise, Vorteile und Anwendungsbereiche von FDM."
 author: "Lukas Braun"
 pubDate: 2024-03-12
 termType: "3D-Druckverfahren"
-keywords: ["FDM", "Fused Deposition Modeling", "3D-Druck Verfahren", "FDM 3D-Druck", "Schichtaufbauverfahren"]
 ---
 
 ## Was ist FDM?

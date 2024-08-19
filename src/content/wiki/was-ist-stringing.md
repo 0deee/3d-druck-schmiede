@@ -4,7 +4,6 @@ description: "Erfahren Sie alles über Stringing im 3D-Druck, auch als Fädenbil
 author: "Paul Berger"
 pubDate: 2024-05-02
 termType: "3D-Druckproblem"
-keywords: ["Stringing", "Fädenbildung", "3D-Druck Stringing", "Retraktion", "3D-Druck Probleme"]
 ---
 
 ## Was ist Stringing?

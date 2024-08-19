@@ -1,0 +1,22 @@
+---
+import Icon from "../utility/GenericIcon.astro";
+
+export interface Props {
+  icon: string;
+  itemHeading: string;
+}
+
+const { icon, itemHeading } = Astro.props;
+---
+
+<div class="flex mb-6">
+  <div>
+    <Icon iconWidth="12" icon={icon} />
+  </div>
+  <div class="ml-4">
+    <h3 class="text-xl font-bold">{itemHeading}</h3>
+    <div>
+      <slot />
+    </div>
+  </div>
+</div>

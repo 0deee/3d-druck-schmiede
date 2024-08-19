@@ -1,0 +1,25 @@
+---
+export interface Props {
+  buttonText?: string;
+  buttonLink?: string;
+  buttonPrimary: boolean;
+}
+
+// component customization
+const { buttonText, buttonLink, buttonPrimary } = Astro.props;
+---
+
+<a
+  class:list={[
+    "py-2.5 px-3.5 rounded-md shadow-sm font-semibold text-sm transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2",
+    {
+      "bg-white md:bg-primary text-primary md:text-white hover:bg-white/80 md:hover:bg-primary/80 focus-visible:outline-primary/80":
+        buttonPrimary,
+      "bg-white text-primary hover:bg-white/80 focus-visible:outline-white/80":
+        !buttonPrimary,
+    },
+  ]}
+  href={buttonLink}
+>
+  {buttonText}
+</a>

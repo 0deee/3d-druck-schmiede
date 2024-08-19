@@ -1,13 +1,14 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import HeroSection from "../../components/HeroSectionSubpages.astro";
-
 import { getCollection } from "astro:content";
 
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import HeroSection from "../../components/sections/HeroSectionSubpages.astro";
+
 const posts = await getCollection("blog");
+// create Set of all categories
 const categories = [...new Set(posts.map((post) => post.data.category))];
 
-const title = "Kategorien | 3D-Druck-Schmiede";
+const title = "Kategorien";
 const description = "Interessante Blog-Artikel rund um den 3D-Druck.";
 ---
 

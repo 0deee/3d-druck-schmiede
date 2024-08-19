@@ -2,18 +2,19 @@
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
-import { Breadcrumbs } from "astro-breadcrumbs";
+import { Schema } from "astro-seo-schema";
 
 import BaseLayout from "./BaseLayout.astro";
-import FormattedDate from "../components/FormattedDate.astro";
-
-import "astro-breadcrumbs/breadcrumbs.css";
+import FormattedDate from "../components/utility/FormattedDate.astro";
+import Icon from "../components/utility/GenericIcon.astro";
+import BreadcrumbsDesign from "../components/utility/BreadcrumbsDesign.astro";
+import SimilarBlogPosts from "../components/sections/SimilarBlogPosts.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
 const blogPosts = await getCollection("blog");
 
-// function to filter out the current blog post and return random posts
+// filter out current blog post and return random posts
 function getRandomBlogPosts(posts, count) {
   // get current path slug
   const currentPostSlug = Astro.url.pathname.split("/").pop();
@@ -38,47 +39,57 @@ const {
 } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout
+  title={title}
+  description={description}
+  image={heroImage?.src /*check if heroImage undefined*/}
+>
+  <Schema
+    slot="in-head"
+    item={{
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `${Astro.url}`,
+      },
+      headline: title,
+      description: description,
+      image: heroImage?.src,
+      author: {
+        "@type": "Person",
+        name: author,
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Your Company Name",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://www.yourcompanywebsite.com/logo.png",
+        },
+      },
+      datePublished: `${pubDate}`,
+      articleSection: category,
+      url: `${Astro.url}`,
+    }}
+  />
   <article>
     <div class="flex flex-col">
       <div class="pt-4 md:pt-12 px-12">
-        <div class="my-6 flex justify-center text-black">
-          <Breadcrumbs linkTextFormat="capitalized" indexText="Startseite">
-            <svg
-              slot="separator"
-              width="24"
-              height="24"
-              viewBox="0 0 15 15"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M4.10876 14L9.46582 1H10.8178L5.46074 14H4.10876Z"
-                fill="#000000"></path>
-            </svg>
-          </Breadcrumbs>
-        </div>
+        <BreadcrumbsDesign />
       </div>
       <h1
-        class="text-5xl text-center font-bold my-3 break-words lg:mx-24 xl:mx-48"
+        class="text-5xl text-center font-bold my-3 break-words mx-4 lg:mx-24 xl:mx-48"
       >
         {title}
       </h1>
       <div
         class="flex flex-col md:flex-row items-center justify-center text-lg"
       >
-        <div>
-          <svg
-            class="fill-white w-6 rounded-full bg-primary p-1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            ><title>account icon</title><path
-              d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
-            ></path></svg
-          >
-        </div>
+        <Icon
+          iconWidth="8"
+          icon="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
+        />
         <p class="mx-2">{author}</p>
         <div
           class="bg-primary-lighter rounded-full h-0.5 md:h-1 w-0.5 md:w-1 aria-hidden"
@@ -99,7 +110,7 @@ const {
       <div class="flex justify-center mt-6">
         {
           heroImage && heroImageAlt && (
-            <Image src={heroImage} alt={heroImageAlt} />
+            <Image src={heroImage} alt={heroImageAlt} loading="eager" />
           )
         }
       </div>
@@ -108,72 +119,6 @@ const {
       </div>
     </div>
   </article>
-  <section class="my-6">
-    <div
-      class="flex items-center justify-center py-6 px-6 lg:px-24 text-center"
-    >
-      <header class="max-w-2xl">
-        <h2 class="text-5xl mb-4 font-bold text-black">
-          Ähnliche Blog-Artikel
-        </h2>
-      </header>
-    </div>
-    <div
-      class="grid grid-cols-1 lg:grid-cols-3 mx-6 md:mx-6 lg:mx-16 xl:mx-48 2xl:mx-72"
-    >
-      {
-        randomBlogPosts.map((post) => (
-          <article class="mx-2">
-            <a href={`/blog/${post.slug}`}>
-              {post.data.heroImage && post.data.heroImageAlt && (
-                <Image
-                  class="rounded-lg md:w-full h-84 lg:h-96 object-cover"
-                  src={post.data.heroImage}
-                  format="webp"
-                  alt={post.data.heroImageAlt}
-                />
-              )}
-            </a>
-            <div class="flex flex-row items-center text-sm md:text-sm my-2">
-              <div>
-                <svg
-                  class="inline-block fill-white w-4 md:w-6 rounded-full bg-primary-light p-1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <>
-                    <title>account icon</title>
-                    <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
-                  </>
-                </svg>
-              </div>
-              <p class="mx-2">{post.data.author}</p>
-              <div class="bg-primary-lighter rounded-full h-0.5 md:h-1 w-0.5 md:w-1 aria-hidden" />
-              <div class="mx-2">
-                <FormattedDate date={post.data.pubDate} />
-              </div>
-              <div class="bg-primary-lighter rounded-full h-0.5 md:h-1 w-0.5 md:w-1 aria-hidden" />
 
-              <div class="mx-2 ">
-                <a
-                  href={`/kategorie/${post.data.category.toLowerCase()}`}
-                  class="hover:underline"
-                >
-                  {post.data.category}
-                </a>
-              </div>
-            </div>
-            <a
-              class="hover:text-primary transition ease-in delay-150"
-              href={`/blog/${post.slug}`}
-            >
-              <h2 class="my-4 text-lg md:text-xl text-center md:text-left font-semibold">
-                {post.data.title}
-              </h2>
-            </a>
-          </article>
-        ))
-      }
-    </div>
-  </section>
+  <SimilarBlogPosts randomBlogPosts={randomBlogPosts} />
 </BaseLayout>

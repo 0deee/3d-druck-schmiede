@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 
+import GenericButton from "../utility/GenericButton.astro";
+
 export interface Props {
   showButton?: boolean;
   imageRight: boolean;
@@ -9,9 +11,11 @@ export interface Props {
   backgroundGray:boolean;
   buttonLink?:string;
   altImage:string;
+  eagerLoad?:boolean;
 }
 
-const { image, buttonText, showButton, imageRight, backgroundGray, buttonLink, altImage } = Astro.props;
+// component customization
+const { image, buttonText, showButton, imageRight, backgroundGray, buttonLink, altImage, eagerLoad } = Astro.props;
 ---
 
 <section class={backgroundGray ? 'bg-background' : ''}>
@@ -23,7 +27,8 @@ const { image, buttonText, showButton, imageRight, backgroundGray, buttonLink, a
   <div
     class="flex flex-col lg:flex-row items-center justify-center py-12 px-6 lg:px-24"
   >
-  {imageRight ? (
+  {/* check if image right or left*/ 
+  imageRight ? (
   <div class="max-w-md">
     <div class="text-lg mb-8 text-black text-center text-justify">
         <slot name="section-content" />
@@ -38,44 +43,42 @@ const { image, buttonText, showButton, imageRight, backgroundGray, buttonLink, a
         </a>
       </div>
       )}
-    </div>
-    <div class="pb-12 lg:pb-0 md:mx-8 xl:mx-24">
-      <Image
-        src={image}
-        alt={altImage}
-        width="500"
-        format="webp"
-        loading="eager"
-        class="border-1 border-white rounded-lg shadow-lg"
-      />
-    </div>
+  </div>
+  <div class="pb-12 lg:pb-0 md:mx-8 xl:mx-24">
+    <Image
+      src={image}
+      alt={altImage}
+      width="500"
+      format="webp"
+      loading={eagerLoad? "eager" : "lazy"}
+      class="border-1 border-white rounded-lg shadow-lg"
+    />
+  </div>
   ) : (
-<div class="pb-12 lg:pb-0 md:mx-8 xl:mx-24">
-      <Image
-        src={image}
-        alt={altImage}
-        width="500"
-        format="webp"
-        class="border-1 border-white rounded-lg shadow-lg"
-      />
+  <div class="pb-12 lg:pb-0 md:mx-8 xl:mx-24">
+    <Image
+      src={image}
+      alt={altImage}
+      width="500"
+      format="webp"
+      loading={eagerLoad? "eager" : "lazy"}
+      class="border-1 border-white rounded-lg shadow-lg"
+    />
+  </div>
+  <div class="max-w-xl">
+    <div class="text-lg mb-8 text-black text-center text-justify">
+      <slot name="section-content" />
     </div>
-
-    <div class="max-w-xl">
-      <div class="text-lg mb-8 text-black text-center text-justify">
-        <slot name="section-content" />
-      </div>
       {showButton && (
         <div class="flex justify-center">
-        <a
-          class="bg-primary text-white py-2.5 px-3.5 rounded-md shadow-sm font-semibold text-sm hover:bg-primary/80 transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/80"
-          href={buttonLink}
-        >
-          {buttonText}
-        </a>
-      </div>
+          <GenericButton
+            buttonText={buttonText}
+            buttonLink={buttonLink}
+            buttonPrimary={true}
+          />
+        </div>
       )}
-    </div>
-
+  </div>
   )} 
   </div>
 </section>

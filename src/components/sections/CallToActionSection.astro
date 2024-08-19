@@ -1,0 +1,23 @@
+---
+import GenericButton from "../utility/GenericButton.astro";
+
+const { sectionHeadline } = Astro.props;
+---
+
+<section class="bg-gradient-to-r from-primary to-primary-lighter">
+  <div class="flex items-center justify-center py-24 px-6 lg:px-24 text-center">
+    <header class="max-w-2xl">
+      <h2 class="text-5xl mb-4 font-bold text-white">
+        {sectionHeadline}
+      </h2>
+      <p class="text-lg text-gray-700 mb-8 text-white">
+        <slot />
+      </p>
+      <GenericButton
+        buttonText="Jetzt Kontakt aufnehmen"
+        buttonLink="/kontakt"
+        buttonPrimary={false}
+      />
+    </header>
+  </div>
+</section>

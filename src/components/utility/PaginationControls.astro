@@ -1,0 +1,20 @@
+---
+const { page } = Astro.props;
+---
+
+<div class="flex justify-center space-x-4 my-8">
+  {
+    page.url.prev ? (
+      <div class="bg-primary-light text-white py-2.5 px-3.5 rounded-md shadow-sm font-semibold text-sm hover:bg-primary/80 transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/80">
+        <a href={page.url.prev}>Vorherige Seite</a>
+      </div>
+    ) : null
+  }
+  {
+    page.url.next ? (
+      <div class="bg-primary-light text-white py-2.5 px-3.5 rounded-md shadow-sm font-semibold text-sm hover:bg-primary/80 transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/80">
+        <a href={page.url.next}>Nächste Seite</a>
+      </div>
+    ) : null
+  }
+</div>

@@ -1,10 +1,9 @@
 ---
-title: "PETG (Polyethylenterephthalat) – Vielseitiges Filament für den 3D-Druck"
+title: "PETG – Vielseitiges Filament für den 3D-Druck | 3D-Druck-Schmiede"
 description: "Erfahren Sie alles über PETG (Polyethylenterephthalat), ein beliebtes 3D-Druckmaterial, das Festigkeit, Flexibilität und chemische Beständigkeit kombiniert. Entdecken Sie die Eigenschaften und Anwendungen von PETG."
 author: "Lukas Braun"
 pubDate: 2024-01-24
 termType: "3D-Druckmaterial"
-keywords: ["PETG", "Polyethylenterephthalat", "3D-Druck Filament", "PETG Eigenschaften", "PETG Anwendungen"]
 ---
 
 ## Was ist PETG?
@@ -41,12 +40,14 @@ PETG wird in einer Vielzahl von Anwendungen eingesetzt, die eine Kombination aus
 ## Vor- und Nachteile von PETG
 
 **Vorteile:**
+
 - Hohe Festigkeit und Zähigkeit
 - Chemische Beständigkeit
 - Geringes Warping
 - Lebensmittelecht (bei bestimmten Filamenten)
 
 **Nachteile:**
+
 - Kann fädenziehen (Stringing), wenn die Druckparameter nicht richtig eingestellt sind
 - Kann schwieriger vom Druckbett zu lösen sein, aufgrund der starken Haftung
 

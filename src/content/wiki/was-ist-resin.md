@@ -4,7 +4,6 @@ description: "Erfahren Sie alles über Resin im 3D-Druck, ein flüssiges Photopo
 author: "Lukas Braun"
 pubDate: 2024-02-02
 termType: "3D-Druckmaterial"
-keywords: ["Resin", "3D-Druck Resin", "Photopolymer", "SLA Druck", "Resin Eigenschaften"]
 ---
 
 ## Was ist Resin?
@@ -39,11 +38,13 @@ Resin wird für eine Vielzahl von Anwendungen eingesetzt, bei denen Präzision u
 ## Vor- und Nachteile von Resin
 
 **Vorteile:**
+
 - Hohe Detailgenauigkeit und glatte Oberflächen
 - Vielseitigkeit in den verfügbaren Harzarten
 - Schnelle Aushärtung unter UV-Licht
 
 **Nachteile:**
+
 - Notwendigkeit der Nachbearbeitung und Aushärtung
 - Starker Geruch und potenzielle Gesundheitsrisiken bei unsachgemäßem Umgang
 - Höhere Materialkosten im Vergleich zu Filamenten wie PLA oder ABS

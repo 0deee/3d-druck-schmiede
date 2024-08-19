@@ -1,22 +1,12 @@
 ---
-title: "3D-Druck und Nachhaltigkeit: Wie umweltfreundlich ist additive Fertigung wirklich?"
-description: "Erfahren Sie, wie umweltfreundlich der 3D-Druck wirklich ist. Dieser Artikel beleuchtet die ökologischen Vorteile und Herausforderungen der additiven Fertigung und diskutiert, wie diese Technologie nachhaltiger gestaltet werden kann."
+title: "3D-Druck und Nachhaltigkeit: Wie umweltfreundlich ist er wirklich?"
+description: "Wie nachhaltig ist 3D-Druck? Erfahren Sie die ökologischen Vorteile, Herausforderungen und wie die additive Fertigung umweltfreundlicher gestaltet werden kann."
 author: "Lukas Braun"
 pubDate: 2024-03-11
 heroImage: "../../images/blog-img/3d-print-blog-nachhaltigkeit.jpg"
 heroImageAlt: "Ein 3D-Drucker, der nachhaltige Materialien verwendet"
 category: "Nachhaltigkeit"
-keywords:
-  [
-    "3D-Druck",
-    "Nachhaltigkeit",
-    "additive Fertigung",
-    "Umweltfreundlichkeit",
-    "ökologische Auswirkungen",
-  ]
 ---
-
-# 3D-Druck und Nachhaltigkeit: Wie umweltfreundlich ist additive Fertigung wirklich?
 
 Der 3D-Druck, auch als additive Fertigung bekannt, hat das Potenzial, die Art und Weise, wie wir Produkte herstellen, zu revolutionieren. Doch wie umweltfreundlich ist diese Technologie wirklich? In diesem Artikel werfen wir einen detaillierten Blick auf die Nachhaltigkeitsaspekte des 3D-Drucks, die ökologischen Vorteile und die Herausforderungen, die es zu bewältigen gilt.
 

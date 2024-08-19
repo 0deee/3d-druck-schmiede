@@ -1,10 +1,9 @@
 ---
-title: "TPE (Thermoplastische Elastomere) – Flexibles Filament für den 3D-Druck"
+title: "TPE – Flexibles Filament für den 3D-Druck"
 description: "Erfahren Sie alles über TPE (Thermoplastische Elastomere), ein flexibles und gummiartiges Filament für den 3D-Druck. Entdecken Sie die Eigenschaften, Anwendungen und Druckanforderungen von TPE."
 author: "Lukas Braun"
 pubDate: 2024-04-30
 termType: "3D-Druckmaterial"
-keywords: ["TPE", "Thermoplastische Elastomere", "TPE 3D-Druck", "Flexibles Filament", "TPE Anwendungen"]
 ---
 
 ## Was ist TPE?
@@ -41,11 +40,13 @@ Aufgrund seiner einzigartigen Eigenschaften wird TPE in einer Vielzahl von Anwen
 ## Vor- und Nachteile von TPE
 
 **Vorteile:**
+
 - Hervorragende Flexibilität und Elastizität
 - Widerstandsfähig gegen Abrieb und Chemikalien
 - Gummiartige, rutschfeste Oberfläche
 
 **Nachteile:**
+
 - Schwieriger zu drucken als herkömmliche Filamente wie PLA oder ABS
 - Erfordert spezielle Druckeinstellungen und langsame Druckgeschwindigkeit
 - Kann zu Verstopfungen neigen, wenn die Retraktionseinstellungen nicht korrekt sind

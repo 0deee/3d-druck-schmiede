@@ -1,22 +1,12 @@
 ---
-title: "Wie funktioniert Dual-Extrusion im 3D-Druck? Vorteile, Herausforderungen und Einsatzmöglichkeiten"
-description: "Erfahren Sie, wie Dual-Extrusion im 3D-Druck funktioniert, welche Vorteile sie bietet und welche Herausforderungen es zu beachten gilt. Entdecken Sie die vielfältigen Einsatzmöglichkeiten dieser Technologie."
+title: "Dual-Extrusion im 3D-Druck: Vorteile, Herausforderungen, Einsatz"
+description: "Erfahren Sie, wie Dual-Extrusion im 3D-Druck funktioniert, ihre Vorteile und Nachteile. Entdecken Sie die vielseitigen Einsatzmöglichkeiten dieser Technologie."
 author: "Paul Berger"
 pubDate: 2024-03-08
 heroImage: "../../images/blog-img/3d-printer-dual-extrusion.jpg"
 heroImageAlt: "3D-Drucker mit Dual-Extrusion, der ein zweifarbiges Objekt druckt"
 category: "Technik"
-keywords:
-  [
-    "3D-Druck",
-    "Dual-Extrusion",
-    "3D-Druck-Technologie",
-    "Mehrfarbdruck",
-    "3D-Druck Herausforderungen",
-  ]
 ---
-
-# Wie funktioniert Dual-Extrusion im 3D-Druck? Vorteile, Herausforderungen und Einsatzmöglichkeiten
 
 Dual-Extrusion ist eine fortschrittliche Technologie im 3D-Druck, die es ermöglicht, zwei verschiedene Materialien oder Farben gleichzeitig zu drucken. Dies eröffnet zahlreiche neue Möglichkeiten für die Gestaltung von Objekten und die Erweiterung der Funktionalität von 3D-Druckern. In diesem Artikel erklären wir detailliert, wie Dual-Extrusion funktioniert, welche Vorteile und Herausforderungen diese Technologie mit sich bringt und welche Einsatzmöglichkeiten sie bietet.
 

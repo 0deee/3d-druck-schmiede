@@ -1,51 +1,49 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "./BaseLayout.astro";
-import { Breadcrumbs } from "astro-breadcrumbs";
+import { ViewTransitions } from "astro:transitions";
 
-import "astro-breadcrumbs/breadcrumbs.css";
+import BreadcrumbsDesign from "../components/utility/BreadcrumbsDesign.astro";
+import FormattedDate from "../components/utility/FormattedDate.astro";
 
-const { frontmatter } = Astro.props;
+const { id, data } = Astro.props;
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
-  <article>
-    <div class="flex flex-col">
-      <div class="py-4 md:py-12 px-12">
-        <div class="my-6 flex justify-center text-black">
-          <Breadcrumbs linkTextFormat="capitalized" indexText="Startseite">
-            <svg
-              slot="separator"
-              width="24"
-              height="24"
-              viewBox="0 0 15 15"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M4.10876 14L9.46582 1H10.8178L5.46074 14H4.10876Z"
-                fill="#000000"></path>
-            </svg>
-          </Breadcrumbs>
-        </div>
-        <div>
-          <!--<Image src={import(`${frontmatter.caseStudyImage}`)} alt="whatever" />-->
-          <img
-            src={frontmatter.caseStudyImage}
-            alt={frontmatter.caseStudyImageAlt}
+<BaseLayout
+  title={data.title}
+  description={data.description}
+  image={data.caseStudyImage.src}
+>
+  <ViewTransitions slot="in-head" />
+  <article class="flex flex-col">
+    <div class="py-4 md:py-12 px-12">
+      <BreadcrumbsDesign />
+
+      <div class="flex flex-col mx-6 md:mx-16 lg:mx-16 xl:mx-24 2xl:mx-48">
+        <div class="w-full flex justify-center">
+          <Image
+            src={data.caseStudyImage}
+            alt={data.caseStudyImageAlt}
+            transition:name={id}
           />
         </div>
-        <h1
-          class="text-5xl text-center font-bold my-3 break-words lg:mx-24 xl:mx-48"
-        >
-          {frontmatter.title}
-        </h1>
-        <div
-          class="wiki-content mx-6 md:mx-16 lg:mx-48 xl:mx-72 2xl:mx-96 my-8 *:my-4 text-justify overflow-x-auto"
-        >
-          <slot />
+        <div>
+          <h1 class="text-3xl font-bold break-words my-4">
+            {data.title}
+          </h1>
+          <div class="*:my-2">
+            <p><b>Unternehmen:</b> {data.company}</p>
+            <div class="flex flex-row gap-2">
+              <p><b>Projektlänge:</b></p>
+              <FormattedDate date={data.startDate} /> -
+              <FormattedDate date={data.endDate} />
+            </div>
+            <p><b>Materialien:</b> {data.materials}</p>
+            <p><b>Druckverfahren:</b> {data.printingTechnology}</p>
+            <div class="wiki-content my-4 *:my-4 text-justify overflow-x-auto">
+              <slot />
+            </div>
+          </div>
         </div>
       </div>
     </div>

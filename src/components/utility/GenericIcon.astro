@@ -1,0 +1,23 @@
+---
+export interface Props {
+  icon: string;
+  iconWidth: string;
+  isResponsive?: boolean;
+}
+
+const { icon, iconWidth, isResponsive } = Astro.props;
+---
+
+<div>
+  <svg
+    class:list={[
+      "fill-white rounded-full",
+      `w-${iconWidth}`,
+      { "w-4 md:w-12 p-1 inline-block bg-primary-light": isResponsive },
+      { "p-2 bg-primary": !isResponsive },
+    ]}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    aria-hidden="true"><path d={icon}></path></svg
+  >
+</div>

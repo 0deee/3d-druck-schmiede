@@ -1,10 +1,9 @@
 ---
-title: "SLA (Stereolithography) – Präzision im 3D-Druck"
+title: "SLA – Präzision im 3D-Druck"
 description: "Erfahren Sie alles über SLA (Stereolithography), ein hochpräzises 3D-Druckverfahren, das mit flüssigem Resin arbeitet. Entdecken Sie die Funktionsweise, Vorteile und Anwendungsbereiche von SLA."
 author: "Lukas Braun"
 pubDate: 2024-06-04
 termType: "3D-Druckverfahren"
-keywords: ["SLA", "Stereolithography", "SLA 3D-Druck", "SLA Verfahren", "Resin 3D-Druck"]
 ---
 
 ## Was ist SLA?

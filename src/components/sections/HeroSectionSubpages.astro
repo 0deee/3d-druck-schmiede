@@ -1,0 +1,38 @@
+---
+import BreadcrumbsDesign from "../utility/BreadcrumbsDesign.astro";
+
+export interface Props {
+  backgroundGray: boolean;
+}
+
+const { backgroundGray } = Astro.props;
+---
+
+<section
+  class={backgroundGray
+    ? "bg-gradient-to-r from-primary to-primary-lighter md:bg-none md:bg-background"
+    : ""}
+>
+  <div class="flex items-center justify-center py-32 px-6 lg:px-24 text-center">
+    <header class="max-w-2xl">
+      <BreadcrumbsDesign />
+
+      <h1
+        class:list={[
+          "text-5xl md:text-7xl mb-4 font-bold",
+          { "text-white md:text-black": backgroundGray },
+        ]}
+      >
+        <slot name="hero-heading" />
+      </h1>
+      <p
+        class:list={[
+          "text-xl mb-8",
+          { "text-white md:text-black": backgroundGray },
+        ]}
+      >
+        <slot name="hero-subheading" />
+      </p>
+    </header>
+  </div>
+</section>

@@ -1,12 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import HeroSection from "../../components/HeroSectionSubpages.astro";
+import HeroSection from "../../components/sections/HeroSectionSubpages.astro";
 
-const title = "Das 3D-Druck-Wiki | 3D-Druck-Schmiede";
-const description = "Im Wiki viele 3D-Druck-Begriffe kennenlernen.";
-
-
+const title = "Das 3D-Druck-Wiki";
+const description = "Erkunden Sie unser 3D-Druck-Wiki – Ihr umfassender Leitfaden zu Begriffen, Technologien und Anwendungen im Bereich des 3D-Drucks.";
 
 //TypeScript definition of wiki entry structure
 export interface WikiEntry {
@@ -24,10 +22,10 @@ export interface GroupedEntries {
 
 const wikiEntries: WikiEntry[] = await getCollection('wiki');
 
-// Sort the entries alphabetically by title (assuming each entry has a "title" field)
+// sort entries alphabetically by title
 wikiEntries.sort((a, b) => a.data.title.localeCompare(b.data.title));
 
-// Group entries by the first letter of their title
+// group entries by first letter of their title
 const groupedEntries = wikiEntries.reduce((acc: GroupedEntries, entry: WikiEntry) => {
   const firstLetter = entry.data.title[0].toUpperCase();
   if (!acc[firstLetter]) {
@@ -36,8 +34,6 @@ const groupedEntries = wikiEntries.reduce((acc: GroupedEntries, entry: WikiEntry
   acc[firstLetter].push(entry);
   return acc;
 }, {});
-
-
 ---
 <BaseLayout title={title} description={description}>
   <HeroSection backgroundGray={false}>

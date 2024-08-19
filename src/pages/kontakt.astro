@@ -1,25 +1,15 @@
 ---
-import { Image } from "astro:assets";
-
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HeroSection from "../components/HeroSectionSubpages.astro";
-import ContentSectionGroup from "../components/ContentSectionGroup.astro";
-import TeamMemberCard from "../components/TeamMemberCard.astro";
+import HeroSection from "../components/sections/HeroSectionSubpages.astro";
+import ContentSectionGroup from "../components/sections/ContentSectionGroup.astro";
+import TeamSection from "../components/sections/TeamSection.astro";
+import ContactSection from "../components/sections/ContactSection.astro";
 
 import contactGroupHero from "../images/marketing-img/contact-group-hero.jpg";
-import oliverImage from "../images/team/od2-image.jpg";
-import jonasImage from "../images/team/jw-image.jpg";
-import annaImage from "../images/team/am-image.jpg";
-import ninaImage from "../images/team/nf-image.jpg";
-import alexImage from "../images/team/alexm-image.jpg";
-import tomImage from "../images/team/tm-image.jpg";
-import laraImage from "../images/team/ls-image.jpg";
-import lukasImage from "../images/team/lb-image.jpg";
-import paulImage from "../images/team/pb-image.jpg";
-import fkImage from "../images/team/fk-image.jpg";
 
 const title = "Kontakt | 3D-Druck-Schmiede";
-const description = "Wer ist die 3D-Druck-Schmiede? Hier Kontakt aufnehmen!";
+const description =
+  "Wer ist die 3D-Druck-Schmiede? Wir bieten 3D-Drucke aus Friedrichshafen. Nehmen Sie hier mit uns Kontakt auf!";
 ---
 
 <BaseLayout title={title} description={description}>
@@ -29,7 +19,8 @@ const description = "Wer ist die 3D-Druck-Schmiede? Hier Kontakt aufnehmen!";
       >Lernen Sie die 3D-Druck-Schmiede und ihre Mitarbeiter kennen.</span
     >
   </HeroSection>
-  <section class="my-12 mx-6 md:mx-24">
+
+  <section id="schnellfakten" class="my-12 mx-6 md:mx-24">
     <div
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 rounded-xl md:rounded-full shadow gap-0.5 overflow-hidden"
     >
@@ -87,160 +78,7 @@ const description = "Wer ist die 3D-Druck-Schmiede? Hier Kontakt aufnehmen!";
     </p>
   </ContentSectionGroup>
 
-  <section>
-    <header>
-      <h2 class="text-5xl px-12 lg:px-28 pt-12 text-black font-bold">
-        Das 3D-Druck-Schmiede-Team
-      </h2>
-    </header>
-    <div
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 items-center justify-center py-12 px-6 lg:px-24"
-    >
-      <TeamMemberCard
-        image={oliverImage}
-        altImage="Bild Teammitglied"
-        employeeName="Oliver Dankwart"
-        role="CEO"
-        email="oliver.dankwart@3d-druck-schmiede.de"
-      />
-      <TeamMemberCard
-        image={alexImage}
-        altImage="Bild Teammitglied"
-        employeeName="Alex Müller"
-        role="CTO"
-        email="alex.muellert@3d-druck-schmiede.de"
-      />
-      <TeamMemberCard
-        image={jonasImage}
-        altImage="Bild Teammitglied"
-        employeeName="Jonas Weber"
-        role="CMO"
-        email="jonas.weber@3d-druck-schmiede.de"
-      />
-      <TeamMemberCard
-        image={ninaImage}
-        altImage="Bild Teammitglied"
-        employeeName="Nina Fischer"
-        role="Business Development"
-        email="nina.fischer@3d-druck-schmiede.de"
-      />
-      <TeamMemberCard
-        image={tomImage}
-        altImage="Bild Teammitglied"
-        employeeName="Tom Schulz"
-        role="Projektmanager"
-        email="tom.schulz@3d-druck-schmiede.de"
-      />
-      <TeamMemberCard
-        image={laraImage}
-        altImage="Bild Teammitglied"
-        employeeName="Lara Schmidt"
-        role="3D-Druck-Technikerin"
-        email="lara.schmidt@3d-druck-schmiede.de"
-      />
-      <TeamMemberCard
-        image={paulImage}
-        altImage="Bild Teammitglied"
-        employeeName="Paul Berger"
-        role="3D-Druck-Techniker"
-        email="paul.berger@3d-druck-schmiede.de"
-      />
-      <TeamMemberCard
-        image={lukasImage}
-        altImage="Bild Teammitglied"
-        employeeName="Lukas Braun"
-        role="3D-Modeler"
-        email="anna.meier@3d-druck-schmiede.de"
-      />
-      <TeamMemberCard
-        image={fkImage}
-        altImage="Bild Teammitglied"
-        employeeName="Felix König"
-        role="3D-Modeler"
-        email="felix.koenig@3d-druck-schmiede.de"
-      />
-      <TeamMemberCard
-        image={annaImage}
-        altImage="Bild Teammitglied"
-        employeeName="Anna Meier"
-        role="Backoffice"
-        email="lukas.braun@3d-druck-schmiede.de"
-      />
-    </div>
-  </section>
+  <TeamSection />
 
-  <section>
-    <header>
-      <h2 class="text-5xl px-12 lg:px-28 pt-12 text-black font-bold">
-        Lassen Sie uns gemeinsam an Ihrer Vision arbeiten
-      </h2>
-    </header>
-    <div
-      class="flex flex-col lg:flex-row items-center justify-center py-12 px-6 lg:px-24"
-    >
-      <div class="rounded-sm shadow bg-background max-w-md">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius explicabo,
-        illum dicta necessitatibus vitae rerum repellendus eligendi nobis in
-        earum ipsa asperiores dignissimos nihil recusandae suscipit minima
-        tempore sapiente maxime?
-      </div>
-      <div class="px-12">
-        <h3 class="text-xl font-bold my-4">Kontaktinformationen</h3>
-        <div class="flex">
-          <div>
-            <svg
-              class="fill-white w-12 rounded-full bg-primary p-2"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              ><title>home</title><path
-                d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"></path></svg
-            >
-          </div>
-          <div class="ml-2">
-            <h3 class="text-xl font-bold text-black">Anschrift</h3>
-            <p class="text-md text-black">3D-Druck-Schmiede</p>
-            <p class="text-md mb-8 text-black">
-              Musterstraße 40, 88045, Friedrichshafen
-            </p>
-          </div>
-        </div>
-        <div class="flex">
-          <div>
-            <svg
-              class="fill-white w-12 rounded-full bg-primary p-2"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              ><title>email</title><path
-                d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"
-              ></path></svg
-            >
-          </div>
-          <div class="ml-2 mb-8">
-            <h3 class="text-xl font-bold text-black">E-Mail</h3>
-            <a
-              href="mailto:kontakt@3d-druck-schmiede.de"
-              class="text-md text-black hover:text-primary"
-              >kontakt@3d-druck-schmiede.de</a
-            >
-          </div>
-        </div>
-        <div class="flex">
-          <div>
-            <svg
-              class="fill-white w-12 rounded-full bg-primary p-2"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              ><title>phone</title><path
-                d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"
-              ></path></svg
-            >
-          </div>
-          <div class="ml-2">
-            <h3 class="text-xl font-bold text-black">Telefon</h3>
-            <p class="text-md text-black mb-8">+49 150 01 33 69</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <ContactSection />
 </BaseLayout>

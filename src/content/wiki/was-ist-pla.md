@@ -1,10 +1,9 @@
 ---
-title: "PLA (Polylactide) – Das beliebte Filament für den 3D-Druck"
+title: "PLA – Das beliebte Filament für den 3D-Druck | 3D-Druck-Schmiede"
 description: "Erfahren Sie alles über PLA (Polylactide), ein umweltfreundliches und vielseitiges 3D-Druckmaterial. Entdecken Sie die Eigenschaften, Vorteile und Anwendungen von PLA im 3D-Druck."
 author: "Lukas Braun"
 pubDate: 2024-01-16
 termType: "3D-Druckmaterial"
-keywords: ["PLA", "Polylactide", "PLA 3D-Druck", "PLA Eigenschaften", "PLA Anwendungen"]
 ---
 
 ## Was ist PLA?
@@ -39,11 +38,13 @@ Dank seiner Vielseitigkeit und Benutzerfreundlichkeit wird PLA in einer Vielzahl
 ## Vor- und Nachteile von PLA
 
 **Vorteile:**
+
 - Einfache Verarbeitung und gute Druckeigenschaften
 - Umweltfreundlich und biologisch abbaubar
 - Geringes Warping und gute Haftung auf dem Druckbett
 
 **Nachteile:**
+
 - Geringere Hitzebeständigkeit im Vergleich zu anderen Filamenten wie ABS oder PETG
 - Brüchigkeit: PLA ist weniger flexibel und kann unter Belastung schneller brechen
 
