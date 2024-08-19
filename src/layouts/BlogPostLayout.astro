@@ -10,6 +10,8 @@ import Icon from "../components/utility/GenericIcon.astro";
 import BreadcrumbsDesign from "../components/utility/BreadcrumbsDesign.astro";
 import SimilarBlogPosts from "../components/sections/SimilarBlogPosts.astro";
 
+import companyLogo from "../images/logo.png"; // for schema
+
 type Props = CollectionEntry<"blog">["data"];
 
 const blogPosts = await getCollection("blog");
@@ -62,10 +64,10 @@ const {
       },
       publisher: {
         "@type": "Organization",
-        name: "Your Company Name",
+        name: "3D-Druck-Schmiede",
         logo: {
           "@type": "ImageObject",
-          url: "https://www.yourcompanywebsite.com/logo.png",
+          url: `https://3d-druck-schmiede.netlify.app/${companyLogo.src}`,
         },
       },
       datePublished: `${pubDate}`,

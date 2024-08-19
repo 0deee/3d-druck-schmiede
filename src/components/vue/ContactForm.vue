@@ -206,7 +206,7 @@ export default {
       isHoneypotFilled: false,
       isRecaptchaVerified: false,
       isFalseRecaptcha: false,
-      siteKey: "6LcdmykqAAAAAKJ4lylBeEkH95qsOeosDIXQBCmk",
+      siteKey: process.env.VUE_APP_RECAPTCHA_SITE_KEY || "",
     };
   },
   methods: {
