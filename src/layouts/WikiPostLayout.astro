@@ -35,7 +35,7 @@ const { title, description, author, pubDate, termType } = Astro.props;
         <BreadcrumbsDesign />
 
         <h1
-          class="text-5xl text-center font-bold my-3 break-words lg:mx-24 xl:mx-48"
+          class="text-3xl md:text-5xl text-center font-bold my-3 break-words lg:mx-24 xl:mx-48"
         >
           {title}
         </h1>
@@ -43,8 +43,9 @@ const { title, description, author, pubDate, termType } = Astro.props;
           class="flex flex-col md:flex-row items-center justify-center text-lg"
         >
           <Icon
-            iconWidth="8"
+            iconWidth="w-8"
             icon="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
+            bgColorOption="primary-light"
           />
           <p class="mx-2">{author}</p>
           <div

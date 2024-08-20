@@ -48,7 +48,12 @@ const { page }: { page: PageProps } = Astro.props;
     >
       {
         page.data.map((post) => (
-          <BlogPostCard post={post} isBlogMainPage={true} />
+          <BlogPostCard
+            post={post}
+            isBlogMainPage={true}
+            isSimilarBlogCard={false}
+            isResponsive={true}
+          />
         ))
       }
     </div>

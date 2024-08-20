@@ -16,6 +16,7 @@ export async function getStaticPaths({ paginate }) {
   );
 
   // // create Set of all categories
+  // lower case for category matching
   const uniqueTags = [
     ...new Set(allPosts.map((post) => post.data.category.trim().toLowerCase())),
   ];
@@ -47,7 +48,12 @@ const params = Astro.params;
     >
       {
         page.data.map((post) => (
-          <BlogPostCard post={post} isBlogMainPage={false} />
+          <BlogPostCard
+            post={post}
+            isBlogMainPage={false}
+            isSimilarBlogCard={false}
+            isResponsive={true}
+          />
         ))
       }
     </div>

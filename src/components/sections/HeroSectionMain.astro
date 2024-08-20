@@ -8,10 +8,17 @@ export interface Props {
   buttonLink?: string;
   heroImage: ImageMetadata;
   buttonPrimary: boolean;
+  buttonPrimaryMobile: boolean;
 }
 
 // props for component customization
-const { buttonText, buttonLink, buttonPrimary, heroImage } = Astro.props;
+const {
+  buttonText,
+  buttonLink,
+  buttonPrimary,
+  buttonPrimaryMobile,
+  heroImage,
+} = Astro.props;
 ---
 
 <section
@@ -30,6 +37,7 @@ const { buttonText, buttonLink, buttonPrimary, heroImage } = Astro.props;
         buttonText={buttonText}
         buttonLink={buttonLink}
         buttonPrimary={buttonPrimary}
+        buttonPrimaryMobile={buttonPrimaryMobile}
       />
     </header>
 

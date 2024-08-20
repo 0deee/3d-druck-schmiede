@@ -9,6 +9,7 @@ import FormattedDate from "../components/utility/FormattedDate.astro";
 import Icon from "../components/utility/GenericIcon.astro";
 import BreadcrumbsDesign from "../components/utility/BreadcrumbsDesign.astro";
 import SimilarBlogPosts from "../components/sections/SimilarBlogPosts.astro";
+import CallToActionSection from "../components/sections/CallToActionSection.astro";
 
 import companyLogo from "../images/logo.png"; // for schema
 
@@ -81,7 +82,7 @@ const {
         <BreadcrumbsDesign />
       </div>
       <h1
-        class="text-5xl text-center font-bold my-3 break-words mx-4 lg:mx-24 xl:mx-48"
+        class="text-3xl md:text-5xl text-center font-bold my-3 break-words mx-4 lg:mx-24 xl:mx-48"
       >
         {title}
       </h1>
@@ -89,8 +90,9 @@ const {
         class="flex flex-col md:flex-row items-center justify-center text-lg"
       >
         <Icon
-          iconWidth="8"
+          iconWidth="w-8"
           icon="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
+          bgColorOption="primary-light"
         />
         <p class="mx-2">{author}</p>
         <div
@@ -123,4 +125,13 @@ const {
   </article>
 
   <SimilarBlogPosts randomBlogPosts={randomBlogPosts} />
+  <CallToActionSection
+    sectionHeadline="Interessiert am 3D-Druck? Wir setzen Ihre Ideen um!"
+  >
+    <span
+      >Lassen Sie sich von unseren Blog-Artikeln inspirieren und verwandeln Sie
+      Ihre Ideen in Realität. Kontaktieren Sie uns, um Ihre eigenen
+      3D-Druckprojekte mit unseren Experten zu verwirklichen.</span
+    >
+  </CallToActionSection>
 </BaseLayout>

@@ -1,7 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import BaseLayout from "./BaseLayout.astro";
 import { ViewTransitions } from "astro:transitions";
+import BaseLayout from "./BaseLayout.astro";
+import CallToActionSection from "../components/sections/CallToActionSection.astro";
 
 import BreadcrumbsDesign from "../components/utility/BreadcrumbsDesign.astro";
 import FormattedDate from "../components/utility/FormattedDate.astro";
@@ -48,4 +49,15 @@ const { id, data } = Astro.props;
       </div>
     </div>
   </article>
+
+  <CallToActionSection
+    sectionHeadline="Bereit für Ihr eigenes 3D-Druck-Projekt?"
+  >
+    <span
+      >Lassen Sie uns gemeinsam Ihre Ideen zum Leben erwecken. Kontaktieren Sie
+      uns noch heute, um maßgeschneiderte 3D-Drucklösungen zu erhalten, die
+      genauso beeindruckend sind wie unsere bisherigen Projekte. Wir freuen uns
+      darauf, Ihre Vision in die Realität umzusetzen!</span
+    >
+  </CallToActionSection>
 </BaseLayout>

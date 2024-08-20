@@ -3,18 +3,20 @@ export interface Props {
   icon: string;
   iconWidth: string;
   isResponsive?: boolean;
+  bgColorOption?: "primary" | "primary-light";
 }
 
-const { icon, iconWidth, isResponsive } = Astro.props;
+const { icon, iconWidth, isResponsive, bgColorOption } = Astro.props;
 ---
 
 <div>
   <svg
     class:list={[
-      "fill-white rounded-full",
-      `w-${iconWidth}`,
-      { "w-4 md:w-12 p-1 inline-block bg-primary-light": isResponsive },
-      { "p-2 bg-primary": !isResponsive },
+      "fill-white rounded-full p-1",
+      /* set iconWidth only when isResponsive is false*/
+      !isResponsive && iconWidth,
+      { "w-4 md:w-8": isResponsive },
+      bgColorOption === "primary-light" ? "bg-primary-light" : "bg-primary",
     ]}
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
