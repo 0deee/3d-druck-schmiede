@@ -56,7 +56,7 @@ const groupedEntries = wikiEntries.reduce((acc: GroupedEntries, entry: WikiEntry
     {Object.entries(groupedEntries).map(([letter, entries]) => (
       <div class="flex">
         <div class="flex-none w-[100px]">
-          <h2 class="text-7xl font-bold">{letter}</h2>
+          <h2 class="text-5xl lg:text-7xl font-bold">{letter}</h2>
         </div>
         <div class="flex-grow">
           <ul class="grid grid-cols-2 md:grid-cols-3 gap-4">
