@@ -1,7 +1,7 @@
 <template>
   <section class="relative mx-4 md:mx-24 lg:mx-48">
     <div class="pt-12 text-center">
-      <h2 class="text-5xl px-6 text-black font-bold break-words">
+      <h2 class="text-5xl px-6 text-black font-bold hyphens-auto">
         Kundenprojekte in höchster Qualität
       </h2>
       <p class="text-lg mb-8 text-black pt-4">

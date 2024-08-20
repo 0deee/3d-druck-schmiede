@@ -71,7 +71,7 @@ const { post, isBlogMainPage, isSimilarBlogCard, isResponsive } = Astro.props;
     <div class="mx-2">
       <a
         href={`/kategorie/${post.data.category.toLowerCase()}`}
-        class="hover:underline break-all"
+        class="hover:underline hyphens-auto"
       >
         {post.data.category}
       </a>

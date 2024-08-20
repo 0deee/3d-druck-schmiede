@@ -1,7 +1,7 @@
 <template>
   <section class="relative mx-4 md:mx-24 xl:mx-48">
     <div class="pt-12 text-center">
-      <h2 class="text-5xl px-6 text-black font-bold break-words">
+      <h2 class="text-5xl px-6 text-black font-bold hyphens-auto">
         Aktuelles aus der Welt des 3D-Drucks
       </h2>
       <p class="text-lg mb-8 text-black pt-4">
@@ -69,9 +69,7 @@
                   :alt="blog.data.heroImageAlt"
                   class="w-full h-84 lg:h-96 object-cover"
                 />
-                <h3
-                  class="mt-2 text-lg md:text-xl text-left font-semibold p-2"
-                >
+                <h3 class="mt-2 text-lg md:text-xl text-left font-semibold p-2">
                   {{ blog.data.title }}
                 </h3>
                 <div class="flex flex-row items-center text-sm md:text-sm mx-2">
