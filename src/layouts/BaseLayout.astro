@@ -1,5 +1,5 @@
 ---
-import { SimpleAnalytics } from "astro-analytics";
+import { SimpleAnalytics } from "astro-simpleanalytics-plugin";
 
 import BaseHead from "../components/structure/BaseHead.astro";
 import Header from "../components/structure/Header.astro";
@@ -23,6 +23,6 @@ const { title, description, image } = Astro.props;
     <script>
       import "../scripts/menu.js";
     </script>
-    <!--<SimpleAnalytics />-->
+    <SimpleAnalytics />
   </body>
 </html>
