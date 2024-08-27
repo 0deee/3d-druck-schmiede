@@ -2,7 +2,7 @@
   <div class="p-8 bg-white rounded-lg shadow-md">
     <form @submit.prevent="handleSubmit">
       <!--Honeypot Field-->
-      <div class="hidden">
+      <div class="hidden aria-hidden">
         <label for="website">Feld Check:</label>
         <input
           v-model="form.honeypot"
@@ -204,9 +204,8 @@ export default {
       isSubmitting: false,
       isSubmitted: false,
       isHoneypotFilled: false,
-      isRecaptchaVerified: false,
       isFalseRecaptcha: false,
-      siteKey: process.env.RECAPTCHA_SITE_KEY || "", // netlify env variable
+      siteKey: import.meta.env.RECAPTCHA_SITE_KEY || "", // netlify env variable
     };
   },
   methods: {
@@ -224,24 +223,41 @@ export default {
       ).value;
 
       if (!recaptchaToken) {
-        console.log("reCAPTCHA verification failed.");
+        console.log("reCAPTCHA verification failed on client.");
         this.isFalseRecaptcha = true;
         setTimeout(() => {
           this.isFalseRecaptcha = false;
         }, 3000); // remove reCAPTCHA msg after 3 seconds
         return;
-      } else {
-        this.isRecaptchaVerified = true;
       }
 
       this.isSubmitting = true;
 
-      // simulate sending data
-      await new Promise((resolve) => setTimeout(resolve, 2000)); // simulate delay
+      // verify reCAPTCHA using netlify function
+      const response = await fetch("/.netlify/functions/verify-recaptcha", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ recaptchaToken }),
+      });
 
+      // simulate sending data
+      //await new Promise((resolve) => setTimeout(resolve, 2000)); // simulate delay
+
+      const result = await response.json();
+
+      if (!result.success) {
+        console.log("reCAPTCHA verification failed on server.");
+        this.isFalseRecaptcha = true;
+        this.isSubmitting = false;
+        return;
+      }
+
+      // if reCAPTCHA successful
+      // print submitted data to console for test purposes
       this.isSubmitting = false;
       this.isSubmitted = true;
-
       console.log("Form data:", this.form);
 
       // reset form after submission
