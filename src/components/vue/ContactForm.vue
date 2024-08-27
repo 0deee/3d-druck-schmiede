@@ -242,9 +242,6 @@ export default {
         body: JSON.stringify({ recaptchaToken }),
       });
 
-      // simulate sending data
-      //await new Promise((resolve) => setTimeout(resolve, 2000)); // simulate delay
-
       const result = await response.json();
 
       if (!result.success) {
